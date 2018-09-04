@@ -1,0 +1,37 @@
+"""
+1 异常处理
+  虽然程序出错了但是不想让用户看到
+2 统一处理相同的错误方式 Exception 不建议使用
+"""
+name = ['mac hao', 'mac chen']
+data = {}
+try:
+    open('tet.txt')
+except Exception as e:
+    print('没有这个key', e)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
