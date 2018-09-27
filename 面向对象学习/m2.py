@@ -1,6 +1,7 @@
 """
 用python定义类
 
+python遗留的问题
 python有老式类
 python新式类
 
