@@ -16,7 +16,7 @@
     4 子类的类型判断(内建函数)  - 判断类型
         * isinstance
         * issubclass
-4 多继承
+4 多继承 展示也不会使用到
     class DerivedClassName(Base1,base2,base3):
     《statement -1》
     .
@@ -32,26 +32,29 @@ class Programer(object):
     hobby = 'Play japanse'
 
     def __init__(self, name, age, weight):
-        self.name = name  # 公有方法来访问的
-        self._age = age  # 私有属性 但是我们还是可以访问的(一条下划线)
-        self.__weight = weight  # 在类里面是可以访问的，但是想在类的对象里面访问是不可以的(两条下划线)
+        self.name = name
+        self._age = age
+        self.__weight = weight
 
-    @classmethod
+    @classmethod  # 类方法
     def get_hobby(cls):
         return cls.hobby
 
-    @property
+    @property  # 属性方法
     def get_weight(self):
         return self.__weight
 
     def self_introduction(self):
         print('my name is %s \ni am %s years old\n' % (self.name, self._age))
 
+
 """
 实现单继承
 """
+
+
 class BackendProgramer(Programer):
-    def __init__(self,name,age,weight,language):
+    def __init__(self, name, age, weight, language):
         """
         调用了父类的构造函数
         :param name:
@@ -59,12 +62,16 @@ class BackendProgramer(Programer):
         :param weight:
         :param language:
         """
-        super(BackendProgramer,self).__init__(name,age,weight)
+        super(BackendProgramer, self).__init__(name, age, weight)  # 集成了父类的构造方法
         self.language = language
 
+
 if __name__ == '__main__':
-    pro = BackendProgramer('bej', 25, 99,'python')
+    pro = BackendProgramer('bej', 25, 99, 'python')
     print(dir(pro))  # 打印所有的方法
-    print(pro.__dict__)
+    print('------------------------------')
+    print(pro.__dict__)  # 打印出字典类型的数据
+    print('------------------------------')
     print(type(pro))  # 这样的访问形式就想访问一个属性一样的调用
-    print(pro,Programer)  # 判断类型
+    print('------------------------------')
+    print(pro, Programer)  # 判断类型

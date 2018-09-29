@@ -5,6 +5,7 @@
     多态的要素
     1 继承
     2 方法的重写
+    同一个实现类 ，有不同的实现方法
 
 
 """
@@ -50,12 +51,14 @@ class BackendProgramer(Programer):
     def self_introduction(self):
         print('my name is %s \ni am %s years old\n' % (self.name, self.language))
 
+
 def introduce(programer):
-    if isinstance(programer,Programer):
+    if isinstance(programer, Programer):
         programer.self_introduction()
+
 
 if __name__ == '__main__':
     pro = Programer('bej', 25, 99)
-    back = BackendProgramer('tim',30,80,'python')
+    back = BackendProgramer('tim', 30, 80, 'python')
     introduce(pro)
     introduce(back)

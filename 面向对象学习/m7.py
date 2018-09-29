@@ -31,36 +31,20 @@ __del__()
 构造函数实例化的过程
 
 """
+
+
 class Programer(object):
     def __new__(cls, *args, **kwargs):
         print('all __new__method')
         print(args)
-        return super(Programer,cls).__new__(cls,*args,**kwargs)
+        return super(Programer, cls).__new__(cls, *args, **kwargs)
 
-    def __init__(self,name,age):
+    def __init__(self, name, age):
         print('call __init__method')
         self.name = name
         self.age = age
 
+
 if __name__ == '__main__':
-    pro = Programer('landing',44)
+    pro = Programer('landing', 44)
     print(pro.__dict__)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
