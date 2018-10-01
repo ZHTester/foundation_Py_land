@@ -20,37 +20,16 @@ python文件指针定位方式:
 
 """
 import os
+
 # r+ 是以读写的方式来打开一个文件的
-f = open('../landing.txt','r+')
-print(f.tell()) # 显示文件的偏移量 没读取文件那么偏移量就是0
+f = open('2.txt', 'r+')
+print(f.tell())  # 显示文件的偏移量 没读取文件那么偏移量就是0
 print(f.read(3))
-print(f.tell()) # 第3个位置 读取了3个字节出来
-f.seek(0,os.SEEK_SET)  # 将位置指会到0的位置了
+print(f.tell())  # 第3个位置 读取了3个字节出来
+f.seek(0, os.SEEK_SET)  # 将位置指会到0的位置了
 print(f.tell())
-f.seek(0,os.SEEK_END)
+f.seek(0, os.SEEK_END)
 print(f.readlines(5))
 print(f.tell())
-f.seek(0,os.SEEK_CUR)
+f.seek(0, os.SEEK_CUR)
 print(f.tell())
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

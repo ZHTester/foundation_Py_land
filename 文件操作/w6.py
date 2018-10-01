@@ -30,12 +30,12 @@ import sys
 import os
 import codecs
 
-f = open('../landing.txt','r+')
+f = open('2.txt', 'r+')
 print(f.fileno())  # 文件的描述符
 
-print(f.mode) # 查看文件的权限
+print(f.mode)  # 查看文件的权限
 print(f.closed)  # 查看文件的关闭状态 返回的是false那么就是没有关闭的状态
-print(f.encoding) # 返回文件的编码格式
+print(f.encoding)  # 返回文件的编码格式
 # 标准文件
 print(type(sys.stdin))
 print("****************************************************")
@@ -52,46 +52,10 @@ print("****************************************************")
 # print(f.readlines())
 
 """
-
       使用codes模块提供方法创建制定编码格式文件
       open(fname,mode,encoding,errors,buffering)
             使用制定编码格式打开文件
 
 """
-
-f = codecs.open("../1.txt",'w','utf-8')
+f = codecs.open("../1.txt", 'w', 'utf-8')
 print(f.encoding)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
