@@ -7,12 +7,11 @@
      3 用户根据提示继续输入，直到猜中为止
      4 如果用户输入错误，程序可以处理异常
 
-
-
 """
 import random
+
 num = random.randint(0, 100)
-print(num)
+# print(num)
 
 while True:
     try:
@@ -20,12 +19,14 @@ while True:
     except ValueError as e:
         print('请输入 1-100 的值')
         continue
-    if guess >num:
-        print("guess Bigger:",guess)
+    if guess > num:
+        print("数字大了,在猜.........:", guess)
     elif guess < num:
-        print("guess Smaller:",guess)
+        print("数字小了，在来...............:", guess)
     else:
-        print("guess Ok, Game Over")
+        print("你真棒，猜中了，游戏结束")
         break
     print("\n")
+
+
 

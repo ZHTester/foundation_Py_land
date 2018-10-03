@@ -35,16 +35,18 @@ f.close()
 
 
 try:
-    f = open('2.txt')
+    f = open('1.txt')
     line = f.read(2)
     num = int(line)
     print("read num=%d" % num)
 except IOError as e:
     print("catch IOError",e)
-except ValueError as e:
+except Exception as e:
     print("catc ValueError",e)
 else:
     print("没有异常哦.........")
+finally:
+    print("不管成不成功都会执行......")
 
 
 

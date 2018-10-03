@@ -52,13 +52,15 @@ try-except 用例:
      3 用户根据提示继续输入，直到猜中为止
      4 如果用户输入错误，程序可以处理异常
 
+如果错误没有被捕获，他就会一直往上抛，最后被python解释器捕获，打印一个错误信息，然后程序退出
+
 """
 # 异常处理 -1-
 # a = 2
 # try:
 #     a  # a没定义它就会报错 NameError
 # except NameError as e:
-#     print('catch Error'), e
+#     print('catch Error', e)
 #
 # print('exec over')
 
@@ -67,7 +69,7 @@ try-except 用例:
 # try:
 #     undef
 # except:
-#     print ("catch an except")
+#     print("catch an except")
 
 # 异常捕获 -3- 运行前错误
 # try:
@@ -87,29 +89,3 @@ try-except 用例:
 #     undef
 # except IOError as e:
 #     print("catch error", e)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
