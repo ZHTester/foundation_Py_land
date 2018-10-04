@@ -43,8 +43,8 @@ with as 操作如果文件出错了，那么文件就不会关闭，等到python
 
 with open('2.txt','w+') as f1:
     f1.write('12333333')
-    print("print read with as")
-    f1.read()
+    print("print read with as",f1.read())
+
 
 
 

@@ -14,22 +14,17 @@ with语句应用场景：
 """
 
 
+class MyResource:
+    def __enter__(self):
+        print("查询开始")
+        return self
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        print("查询结束")
+
+    def query(self):
+        print("查询中")
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+with MyResource() as f:
+    f.query()

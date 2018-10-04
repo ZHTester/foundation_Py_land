@@ -10,23 +10,39 @@
 """
 import random
 
-num = random.randint(0, 100)
+#
+# num = random.randint(0, 100)
 # print(num)
+
+# while True:
+#     try:
+#         guess = int(input("请输入 1-100"))
+#     except ValueError as e:
+#         print('请输入 1-100 的值')
+#         continue
+#     if guess > num:
+#         print("数字大了,在猜.........:", guess)
+#     elif guess < num:
+#         print("数字小了，在来...............:", guess)
+#     else:
+#         print("你真棒，猜中了，游戏结束")
+#         break
+#     print("\n")
+
+
+num = random.randint(1, 50)
 
 while True:
     try:
-        guess = int(input("请输入 1-100"))
-    except ValueError as e:
+        cai = int(input("游戏开始...(1-50)"))
+    except Exception as e:
         print('请输入 1-100 的值')
         continue
-    if guess > num:
-        print("数字大了,在猜.........:", guess)
-    elif guess < num:
-        print("数字小了，在来...............:", guess)
+    if cai > num:
+        print("你猜的数字大了请重来 %s" % cai)
+    elif cai < num:
+        print("你猜的数字小了请重来 %s" % cai)
     else:
-        print("你真棒，猜中了，游戏结束")
+        print("你真的十分的棒哦 ！ 游戏结束")
         break
     print("\n")
-
-
-
