@@ -21,3 +21,7 @@ b = 1
 print(b in cc)
 b = 'c'
 print(b in cc)
+
+ff = {"a": "日本"}
+dd = {"a": "日本", "b": "釜山"}
+print(ff.dd)  # 字典成员运算符  字典的成员元算是针对 字典中的key value中的key来操作的 判断的是key 不是value

@@ -6,10 +6,10 @@
 """
 a = 1
 print(type(a) is str)
-print(isinstance(a,str))
+print(isinstance(a, str))
 
 """
 判断这三种类型是否存在于a当中
 
 """
-print(isinstance(a,(int,float)))
+print(isinstance(a, (int, float)))

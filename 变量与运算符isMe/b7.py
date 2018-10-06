@@ -20,7 +20,7 @@ print(1 and 1)
 print('a' and 'b')
 print('a' or 'c')
 print(not 'a')
-
+print("-------------not----------------")
 """
 1 int float  0被认为是false 非0这认为是true 0.1也就是true
 2 字符串 空字符串被认为是false 非空则认为是true
@@ -33,10 +33,8 @@ print(not '0')
 print(not [])
 print(not [1,23])
 
+print("-------or 数据类型 ---------")
 print([1] or [])  # 非布尔类型有一定的转换关系转换成bool 但是了反过来也是这样的概念
-
-
-
 """
 and 返回的顺序
 一假必假  

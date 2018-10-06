@@ -9,13 +9,12 @@
 
 """
 c = 2
-c+= 1
+c += 1
 print(c)
 
 a = 2
 b = 3
-b +=a
+b += a
 print(b)
-b -=a
+b -= a
 print(b)
-
