@@ -31,7 +31,7 @@ def printl(code):
     return "遇到return中不会被执行的"
     print("123")  # 遇到return不会被执行的
 
-
+# 必须参数
 def add(a, b):
     return a + b
 
