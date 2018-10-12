@@ -22,6 +22,7 @@ class StudentHomework:
     def __init__(self, name, age):
         """
         这就是定义实例变量的一个方法 和对象有关和类没关系
+        self.name = name self.name 也就对象的属性 = name 我们传入的值的name赋值给对象的值
         :param name:
         :param age:
         """
@@ -39,5 +40,4 @@ class StudentHomework:
 """
 student = StudentHomework('北京大人', 28)
 print(student.name)  # 这里直接打印的是类的变量而不是我们预期的实例变量
-student.do_homework() # 其中do_homeword中的self就是指student
-
+student.do_homework()  # 其中do_homeword中的self就是指student

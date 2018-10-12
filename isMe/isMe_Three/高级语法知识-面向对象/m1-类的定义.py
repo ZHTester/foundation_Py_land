@@ -21,6 +21,7 @@ class StudentHomework:
         print('name:' + self.name)
         print('age:' + str(self.age))
 
+
 class Student:
     homework_name = ''
 
@@ -29,4 +30,3 @@ if __name__ == '__main__':
     # 实例化类
     student = StudentHomework()
     student.print_file()  # 调用类下面的方法
-
