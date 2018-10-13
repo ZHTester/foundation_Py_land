@@ -3,6 +3,7 @@
 
 """
 import re
+
 a = '23322python(((dddddd322423#C00oobeij'
 """
 正则表达式
@@ -13,5 +14,5 @@ a = '23322python(((dddddd322423#C00oobeij'
 5 多去找找正则表达式的列表
 """
 b = re.findall('\d', a)
-b = re.findall('\D', a) # 保留非数字
+b = re.findall('\D', a)  # 保留非数字
 print(b)
