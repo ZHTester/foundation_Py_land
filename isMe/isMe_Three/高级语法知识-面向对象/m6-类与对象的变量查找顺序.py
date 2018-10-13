@@ -29,6 +29,7 @@ class StudentHomework:
         age = age
 
     def do_homework(self):
+        name = '开发'
         print('home_work')
 
 

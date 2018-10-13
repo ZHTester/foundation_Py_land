@@ -31,13 +31,14 @@ class StudentHomework:
         print(name)
         print(age)
 
-    def do_homework(self):
+    def do_home_work(self):
         print('home_work')
 
 
 """
 不同的特征值来表示，也就是实例变量
+
 """
 student = StudentHomework('北京大人', 28)
 print(student.name)  # 这里直接打印的是类的变量而不是我们预期的实例变量
-student.do_homework()  # 其中do_homeword中的self就是指student
+student.do_home_work()  # 其中do_home_word中的self就是指student
