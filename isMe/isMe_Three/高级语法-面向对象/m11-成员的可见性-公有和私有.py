@@ -3,7 +3,8 @@
 1 成员我们可以简单的理解成变量和方法  - 方法和变量的可见性
 2 类的内部和类的外部
 3 方法有内部调用和外部调用的区别 - 外部调用的区别就是使用对象去调用类的内部的函数
-                             内部调用就是在类的内部的函数去调用类的内部函数
+                                   内部调用就是在类的内部的函数去调用类的内部函数
+
 4 类变量与实例变量都存在内外调用的一个方式
 5 通过外部调用内部的函数或者说是变量那么这样就会导致我们类内部的封装的数据不安全性 造成数据的不安全性
 6 通过方法来对变量进行一个修改比通过对变量进行数据修改是安全了很多的，通过方法是可以判断
@@ -29,9 +30,10 @@ class Student(object):
         self.name = name
         self.age = age
         self.__score = 0
-        self.__class__.sum += 1
+        self.__class__.sum += 1   # 实例方法调用静态方法
         print("当前班级的人数:" + str(self.__class__.sum))
 
+    # 通过方法修改变量 而 不是通过修改变量值的方式修改
     def marking(self, score):
         if score <= 0:
             return "不能够给别人打负分"
@@ -69,31 +71,36 @@ class Student(object):
 student1 = Student("石敢当", 33)
 a = student1.marking(99)  # 对私有方法进行调用那么会报错
 print(a)
+print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
 """
 在这里设置的私有变量与读取都是生效了的？
 1 由于python动态语言的机制，其实这这里设置的__score是新添加了一个实例变量
 2 python可以通过对象.变量(student1.__score)来添加一个新的实例变量的
 
 """
-student1.__score = 1  # 对私有变量不会报错
+student1.__score = 2  # 对私有变量不会报错 这里就会新生成一个对象
+
 """
 {'name': '小诺', 'age': 55, '_Student__score': 0  --- 这里就是原有的
 __score 名称都修改了 所以我们去访问私有变量就会报错 因为我们找不到这样的一个名称了
 所以我们不能通过动态的方式来进行读取或者修改私有变量的 }
+
 """
 print(student1.__score)  # 这里有一个强行复制的一个操作 这里的score并不是构造函数中的score
+print(student1.__dict__)
+
 """
 {'name': '石敢当', 'age': 33, '_Student__score': 99, '__score': 1}
 _Student__score 就是类本身愿挨的变量
 __score 就是动态语言的特性 新生成的__score
 """
 print(student1.__dict__)
-
+#
 student2 = Student("小诺", 55)
-print(student2.__dict__)
+print("student2: " + str(student2.__dict__))
 # print(student2.__score)  # 在这里他就会报错 为什么会报错了，因为python已经把私有变量的名称修改了自然就是找不到了
-"""
-但是我们可以通过间接的方式来读取这样的私有变量
-student2._Student__score 访问这样的一个私有变量的方式
-"""
+# """
+# 但是我们可以通过间接的方式来读取这样的私有变量
+# student2._Student__score 访问这样的一个私有变量的方式
+# """
 print(student2._Student__score)

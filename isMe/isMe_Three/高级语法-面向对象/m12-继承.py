@@ -19,11 +19,12 @@ python中是允许多继承   一个子类可以继承多个父类
 
 
 # from .m13-继承 import People
+# from isMe.isMe_Three.高级语法-面向对象.m13 import Human
 
 class Human:
     sum = 0
 
-    def __init__(self,name,age):
+    def __init__(self, name, age):
         self.name = name
         self.age = age
 
@@ -47,11 +48,9 @@ class Student(Human):  # 继承
         # Human.__init__(self,name, age)
         super().__init__(name, age)
         self.schoole = schoole
-        # self.__score = 0
-        # self.__class__.sum += 1
 
     def do_home_work(self):
-        super().do_home_work() # 调用父类的方法 super可以调用构造函数 也是可以调用子类的普通的方法
+        # super().do_home_work()  # 调用父类的方法 super可以调用构造函数 也是可以调用子类的普通的方法
         print("这是儿子的方法")
 
 
@@ -62,5 +61,5 @@ print(student.name)
 student.get_name()  # 调用父类的方法
 print(student.age)
 print(student.schoole)
-# Student.do_home_work(student)
 student.do_home_work()
+
