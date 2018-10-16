@@ -10,7 +10,7 @@
 """
 
 import re
-a = 'pytho0python1pythonn2pythonnn3pythonnnnn4'
+a = 'pyho0python1pythonn2pythonnn3pythonnnnn4'
 
 r = re.findall('[a-z]{3,6}', a)  # \d 代表数字的概括字符集  贪婪模式
 
@@ -21,8 +21,9 @@ r1 = re.findall('[a-z]{3,6}?', a)  # \d 代表数字的概括字符集  非贪�
 第二个python 有一个n 也就是匹配了一次 
 第三个pythonnn 有两个n  也就是匹配了n次
 """
-r2 = re.findall('python*', a)  # * 是对前面的字符匹配0次或者无限多次
 
+r2 = re.findall('python*', a)  # * 是对前面的字符匹配0次或者无限多次
+print(r2, "****************n号前面匹配0次或者N次****************")
 
 """
 第一个pytho 没有n 不匹配
@@ -30,21 +31,18 @@ r2 = re.findall('python*', a)  # * 是对前面的字符匹配0次或者无限�
 第三个pythonnn 有两个n  也就是匹配了n次
 """
 r3 = re.findall('python+', a)  # + 是对前面的字符匹配1次或者无限多次
-
+print(r3, "*************匹配1次或者n次，没有的不匹配*************")
 
 """
 第一个pytho 没有n 不匹配
 第二个python 有一个n 也就是匹配了一次 
 第三个pythonnn 有两个n  也就是匹配了n次
 """
-r4 = re.findall('python?', a)  # ? 是对前面的字符匹配0次或者1次  这里会打印出5个python
+r4 = re.findall('pyt?hon?', a)  # ? 是对前面的字符匹配0次或者1次  这里会打印出5个python
+print(r4, "*************匹配1次或者0次*****************")
 
 
-print(r4)
-print(r3)
-print(r2)
-print(r)
-print(r1)
+
 
 
 

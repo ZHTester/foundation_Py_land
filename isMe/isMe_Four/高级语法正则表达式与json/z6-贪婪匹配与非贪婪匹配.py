@@ -10,13 +10,17 @@
 """
 
 import re
-a = 'python 1\t11\n1&java php___99php77'
+a = 'python 12345678\t123\n1&java php___998877665544332211php77890'
 
 r = re.findall('[a-z]{3,6}', a)  # \d 代表数字的概括字符集  贪婪模式
 
 r1 = re.findall('[a-z]{3,6}?', a)  # \d 代表数字的概括字符集  非贪婪模式 一旦找到了3个字符集就不会再去找第4-6个
+r2 = re.findall('[0-9]{3,6}?', a)
+r2 = re.findall('[0-9]{3,6}', a)
 
 
 print(r)
 print(r1)
+print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+print(r2)
 

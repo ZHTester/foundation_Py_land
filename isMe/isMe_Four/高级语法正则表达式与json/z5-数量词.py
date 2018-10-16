@@ -6,8 +6,9 @@
 
 """
 import re
-a = 'python1\t11\n1&javaphp___99php77'
+a = 'python1\t11\n1&java___99php77'
 
 r = re.findall('[a-z]{3,6}', a)  # \d 代表数字的概括字符集
-
+r1 = re.findall('[0-9]{2,3}', a)
 print(r)
+print(r1)

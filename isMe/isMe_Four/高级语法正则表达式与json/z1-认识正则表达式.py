@@ -11,18 +11,19 @@
 """
 import re
 a = 'java|python|c#|beij'
-print(a.index('python') > -1)  # 代表这个表达式存在python
-print('python' in a)
+# print(a.index('python') > -1)  # 代表这个表达式存在python
+# print('python' in a)
 """
 正则表达式
 1 re.findall('正则表达式', 所有匹配的字符串) 返回的列表查询的数据
-2 
-"""
-b = re.findall('PHP', a)
-if len(b) > 0:
-    print("字符串中包含了bei")
-else:
 
-    print('NO')
+"""
+s = 'python'
+b = re.findall(s, a)
+
+if len(b) > 0:
+    print("字符串中包含了%s" % s)
+else:
+    print('字符串包含这个数据类型')
 
 

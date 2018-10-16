@@ -14,18 +14,18 @@ search 与match 函数
 import re
 s = '3355599988842DH'
 
-r = re.match('\d',s)
+r = re.match('\d', s)
 """
 span 将返回我们匹配的字符串在 元字符中的位置
 """
-print(r.span())   # 这里返回的是空因为match是要从开始进行匹配的 match也是返回的一个对象
+# print(r.span())   # 这里返回的是空因为match是要从开始进行匹配的 match也是返回的一个对象
 
 
 r1 = re.search('\d',s)
-print(r1.group())  # 返回的是数组列表 search返回的是一个对象
+print(r1.group(), "*****************")  # 返回的是数组列表 search返回的是一个对象
 
 r2 = re.findall('\d',s)
-print(r2)
+print(r2, "*****************")
 
 
 

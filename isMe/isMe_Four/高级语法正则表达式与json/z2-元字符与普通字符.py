@@ -14,5 +14,7 @@ a = '23322python(((dddddd322423#C00oobeij'
 5 多去找找正则表达式的列表
 """
 b = re.findall('\d', a)
-b = re.findall('\D', a)  # 保留非数字
 print(b)
+print("~~~~~~~~~~~~~~~~~~~~~~")
+b1 = re.findall('\D', a)  # 保留非数字
+print(b1)

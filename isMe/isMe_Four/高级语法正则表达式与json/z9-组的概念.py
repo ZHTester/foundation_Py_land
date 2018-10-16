@@ -11,7 +11,7 @@ import re
 
 a = 'PythonPythonPythonPythonPythonPythonnnn'
 
-r = re.findall('(Python){3}', a)  # 组匹配三次
+r = re.findall('(Python){1}', a)  # 组匹配三次
 r1 = re.findall('Python{3}', a)  # 这样的编写方式就是代表匹配n三次的python pythonn pythonnn
 print(r)
 print('***************')
