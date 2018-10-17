@@ -6,6 +6,7 @@
 2 在实例方法中如何去访问类变量了
 3 在类的外部使用类名称.类变量名称
   在类的内部也是使用类名称.类变量名称
+
 """
 
 
@@ -24,7 +25,6 @@ class StudentHomework:
 
     def do_homework(self):
         print('home_work', self.name)  # 操作实例方法
-
 
 
 """

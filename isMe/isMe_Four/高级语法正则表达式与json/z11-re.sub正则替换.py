@@ -1,4 +1,5 @@
 """
+
 re.sub 正则替换
 1 正则表达式 2 替换的表达式 3 需要搜索的元字符串 4 count = 0 默认情况下是0  5 flages =  匹配模式
 2 4 count = 0 默认情况下是0 默认情况下 将无限次的匹配下去
@@ -9,7 +10,7 @@ re.sub 正则替换
 """
 import re
 
-language = 'PythonC#JavaPHPC#C#C#C#C#'
+language = 'PythonC#GO语言PHPC#ffC#fC#rreC#ssC#'
 
 """
 1 这里直接调用的返回值是一个对象
@@ -27,14 +28,20 @@ language = 'PythonC#JavaPHPC#C#C#C#C#'
 
 def convert(vale):
     match = vale.group()
-    return "!!!" + match + "!!!"
-    # print(vale)
+    if match == 'C#':
+        return "我是你大爷"
+    else:
+        return "Java"
 
 
 # r = re.sub('C#', 'GO', language, 0) # GO 正则表达式可以使一个函数
+r = re.sub('C#', 'GO', language, 3)
 '''
 1 使用函数来表示一个正则表达式，那就是匹配正则表达式就是这个函数的穿入职
 '''
-r = re.sub('C#', convert, language, 0)  # GO 正则表达式可以使一个函数  # b = language.replace('C#', 'GO')  # replace 也是字符串的一个替换功能
+r1 = re.sub('C#', convert, language, 2)  # GO 正则表达式可以使一个函数  # b = language.replace('C#', 'GO')  # replace 也是字符串的一个替换功能
 
 print(r)  # print(b)
+print(r1)
+
+

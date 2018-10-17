@@ -11,6 +11,7 @@ s = 'A3355599988842DH'
 
 def convert(value):
     matchd = value.group()
+
     if int(matchd) >= 6:
         return '9'
     else:

@@ -8,7 +8,6 @@
   对象去访问实例变量的时候，我们返回的是类变量中的值，因为实例变量中没有值，那么就会去类变量中
   去寻找，在类变量中找到了，那么就会返回出来了，如果是类变量中那么就会去类的父类中去寻找，如果还是
   没有这样的一个形式，那么就会报错为定义的变量
-
 4
 
 """
@@ -38,5 +37,5 @@ class StudentHomework:
 """
 student = StudentHomework('北京大人', 28)
 print(student.name)  # 这里直接打印的是类的变量而不是我们预期的实例变量
-print(student.__dict__) # 查看对象下面的变量 __dict__
+print(student.__dict__)  # 查看对象下面的变量 __dict__
 print(StudentHomework.__dict__)

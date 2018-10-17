@@ -40,5 +40,5 @@ class Student(object):
 student = Student("石敢当", 33)
 student1 = Student("石敢当", 33)
 Student.pls_sum()  # 类方法直接调用类方法
-Student.add(2,3)
-student1.add(3,4)
+Student.add(2, 3)
+student1.add(3, 4)
