@@ -33,12 +33,12 @@ class Student(object):
     @staticmethod
     def add(x, y):
         # print(self.name) 不能调用实例方法中的变量
-        print(Student.sum)  # 静态方法的内部也是可以访问我们的类变量的
+        # print(Student.sum)  # 静态方法的内部也是可以访问我们的类变量的
         print("this is a staticmethod")
 
 
 student = Student("石敢当", 33)
-student1 = Student("石敢当", 33)
+student1 = Student("石敢当", 40)
 Student.pls_sum()  # 类方法直接调用类方法
 Student.add(2, 3)
 student1.add(3, 4)
