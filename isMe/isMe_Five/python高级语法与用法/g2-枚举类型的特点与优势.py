@@ -33,7 +33,7 @@ print(a)
 
 class VIP(Enum):  # 这样就是枚举类
     YELLOW = 1
-    YELLOW = 1 # 这个也会报错 相同的标签类型
+    YELLOW = 1  # 这个也会报错 相同的标签类型
 
     GREEN = 2
     BLACK = 3
@@ -51,6 +51,4 @@ class common(object):
     YELOW = 2
 
 
-print(common.YELOW)
-# VIP.YELLOW = 6  # 修改枚举类下面的标签的值就会报错 因为 枚举类下面的标签是不允许被修改的 而且python也有这样的一个保护机制
-
+print(common.YELOW)  # VIP.YELLOW = 6  # 修改枚举类下面的标签的值就会报错 因为 枚举类下面的标签是不允许被修改的 而且python也有这样的一个保护机制
