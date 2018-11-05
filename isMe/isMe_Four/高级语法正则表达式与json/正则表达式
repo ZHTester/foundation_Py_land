@@ -1,4 +1,37 @@
 1 正则表达式的方式 也就是可以解决我们内置函数不能解决的问题
 2 python最大的作用就是爬虫也就数据处理分析方面上
 3 爬虫的核心就是抓取html 利用正则表达式来提取数据
-4
+
+
+
+
+--------
+json对象  json  json字符串 这三个东西是什么 有什么区别 关系是什么
+
+1 json的数据类型和我们的JavaScript的数据类型是十分相似的
+  json 和 JavaScript 之间的一个关系 TypeScript
+2 json并不是JavaScript的一个附属品 。。。。 所以在某种程度上来说 json 是和JavaScript一种平级的语言
+3 JavaScript和json 都是对w3c 这个ECMASCRIPT这个标准的一个定义
+4 因为json被大量的应用到了JavaScript中的交互中，所以说 json和JavaScript没有一个非常直接的关系
+5 json就是一个标准的数据交换格式
+
+json 对象
+json 本身就是一个数据交换格式
+
+json是个独立的数据类型 - 和JavaScript是没有多大的关系
+
+什么是json
+1 json有自己的数据类型虽然它和JavaScript的数据而理性有些相似
+
+现在最流行的服务就是rest服务  这个服务的格式就是json
+
+
+
+
+
+
+
+
+
+
+
