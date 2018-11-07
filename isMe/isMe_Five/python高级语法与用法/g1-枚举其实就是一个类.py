@@ -14,7 +14,6 @@
 枚举的标识名字最好全部都是使用大写来表示
 
 1 枚举本身还是个类，但是和我们普通的类还是有区别的
-2
 
 """
 from enum import Enum
@@ -40,4 +39,5 @@ class VIP(Enum):  # 这样就是枚举类
 ，但是了每个数据类型的值是需要不一样的
 
 """
-print(VIP.YELLOW)
+print(VIP.YELLOW.name)
+print(VIP.YELLOW.value)

@@ -25,7 +25,7 @@ account = 'landing'
 password = 'admin123'
 
 username_input = input("请输入你的而用户名:")
-password_input = input("请输入你的密码")
+password_input = input("请输入你的密码:")
 
 if username_input and password_input == account and password:
     print("恭喜用户:*%s*登录成功" % username_input)
