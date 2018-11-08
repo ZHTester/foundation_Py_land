@@ -18,5 +18,5 @@
 
 
 """
-# import isMe.isMe_One.包模块函数作用域isMe.相对导入和绝对导入包与模块.module02.module04.m2
+# import isMe_进阶.isMe_One.包模块函数作用域isMe.相对导入和绝对导入包与模块.module02.module04.m2
 from  .module02.module04.m2 import m
