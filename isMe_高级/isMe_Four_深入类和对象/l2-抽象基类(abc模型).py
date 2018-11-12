@@ -57,14 +57,56 @@ print(len(com))
 
 如何去模拟一个抽象基类了，需要考虑的点
 
+abc模块 也就是存放了2个地方的 
+第一个就是: from collections.abc
+          import abc 这个需要重点去了解全局的abc模块
+        
+
 """
 
+# 这样就实现了一个抽象基类
 
-class CacheBase(object):
+import abc
+from collections.abc import *
+
+
+class CacheBase(metaclass=abc.ABCMeta):
+
+    # 这里就定义了一个抽象方法 因为添加了一个装饰
+    @abc.abstractmethod
     def get(self, key):
         pass
 
-    def set(self,key,value):
+    @abc.abstractmethod
+    def set(self, key, value):
         pass
 
 
+"""
+1 采用了这样的抽象基类，这样的方法实现，就是会强制子类去实现或者说去重载父类的方法，这样就是bac基类的作用
+因为子类在初始化的时候，就会抛出异常。
+
+2 抽象基类在Python当中，实际上是它已经实现了一些通用的抽象基类，让我们可以去了解我们Python数据结构
+的一些接口，他是放在我们
+
+3 抽象基类可以给我给接口的一些强制规定，也就是Python中的抽象基类的实现 
+
+4 但是抽象基类并不是十分的推荐去使用
+
+5 抽象基类是由哪些基类构成了我们dict的接口了，这个是需要我们去研究的
+
+6 抽象基类也不是让我们去继承的，他只是让我们去理解Python当中的一些继承关系
+
+
+"""
+
+
+class RedisCache(CacheBase):
+    def set(self, key, value):
+        pass
+
+    def get(self, key):
+        pass
+
+
+redis_cache = RedisCache()
