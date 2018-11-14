@@ -42,6 +42,7 @@ if __name__ == "__main__":
     new_day.tomorrow()  # tomorrow(new_day) 这样的转换的方法 self 调用的实例对象
     print(new_day)  # 这个类对象是加了打印方法的
 
+    # 传统意义上方法的使用
     date_str = "2018-12-31"
     year, month, day = tuple(date_str.split("-"))
     new_day = Date(int(year), int(month), int(day))
