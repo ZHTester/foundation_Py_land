@@ -32,8 +32,8 @@ class Company(object):
     def __init__(self, employ_list):
         self.employee = employ_list
 
-    def __len__(self):
-        return len(self.employee)
+    # def __len__(self):
+    #     return len(self.employee)
 
 
 com = Company(['json', 'path', 'dir'])
@@ -45,7 +45,8 @@ a = hasattr(com, '__len__')
 
 """
 print(isinstance(com, Sized))
-print(len(com))
+list_demo = [1,2,3,4]
+print(len(list_demo))
 
 """
 我们需要强制某个子类必须实现某些方法 
