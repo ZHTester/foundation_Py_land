@@ -21,6 +21,7 @@ print(a)  # 这个变量已经被del删除了 同时向引用计数器减1
 4 
 """
 
+
 class A:
     def __del__(self):
         pass
