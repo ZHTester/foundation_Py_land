@@ -13,7 +13,8 @@
 class User:
     def __new__(cls, *args, **kwargs):
         print('in new ')
-        return super().__init__(cls)
+
+        return super().__new__(cls)
 
     def __init__(self, name):
         print('in init')
