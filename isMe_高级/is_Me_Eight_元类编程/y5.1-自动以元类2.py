@@ -1,6 +1,7 @@
 """
 自定义元类
 1 首先类也是对象，type创建类的类
+2 元类就是创建类的类, 对象 <---- class(对象) <--- type（所以说这个就是我们所说的元类）
 
 """
 
@@ -29,7 +30,22 @@ def create_class(name):
 我们现在就通过type来创建一个类，其中第一个参数就是我们要创建类对象的名称，第二属性就是我们要创建这个类
 要继承的基类，如果不填写这个tuple那么默认就是继承的obj，第三个参数就是这个类的属性dict
 """
-User = type("User", (), {"name": "landing"})  # 这样也是创建了一个类
+
+# 给使用type的创建的类增加一个方法
+
+
+def say(self):
+    return "i am say"
+    # return self.name
+
+
+# 这个就是User这个类的基类 继承了这个基类
+class BaseClass:
+    def answser(self):
+        return "i am baseclass"
+
+
+# User = type("User", (), {"name": "landing"})  # 这样也是创建了一个类
 
 if __name__ == "__main__":
     """
@@ -41,10 +57,11 @@ if __name__ == "__main__":
     # my_obj = myClass()  # 调用这个类 这个实例my_obj<--->其实是user类型的
     # print(type(my_obj))  # 这里就获取到了这个my_obj这个类型的 <class '__main__.create_class.<locals>.User'>
 
-    User = type("User", (), {"name": "landing"})  # 这样也是创建了一个类
+    User = type("User", (BaseClass,), {"name": "landing","say": say})  # 这样也是创建了一个类
     my_obj = User()
     print(type(my_obj))  # <class '__main__.User'> 这个类最要是在main函数下的
     print(my_obj.name)  # 这样就可以访问这个类下面的属性
-
+    print(my_obj.say())  # 这样就可以调用使用type创建的方法了
+    print(my_obj.answser())  # 这里就是调用了基类的方法，因为我们这里的user都继承了answser的基类
 
     pass
