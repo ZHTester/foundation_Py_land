@@ -1,9 +1,8 @@
 """
 需求:
-    name = CharField(db_column="", max_length=10)
-    age = IntField(db_column="", max_length=100, min_length=0)
+     name = CharField(db_column="", max_length=10)
+     age = IntField(db_column="", max_length=100, min_length=0)
     其中CharField,IntField 采用属性描述符，来定义 name 和age的值 这里就会做一个参数的检查了
-
 
 """
 import numbers
