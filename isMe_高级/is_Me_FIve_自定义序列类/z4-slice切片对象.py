@@ -4,15 +4,23 @@
 
 list切片操作以后还是 list
 现在我们就想实现切片以后还是list 我们应该怎么做了 ？
+
+class Group:  <------> 实现了序列协议的全部的魔法方法，那么这个类就是序列协议类
+Sequence 序列协议所需要需要实现的魔法函数
+__reversed__
+__contanins__
+__len__
+__itter__
+
 """
 import numbers
+
 
 class Group:
     def __init__(self, group_name, company_name, staffs):
         self.group_name = group_name
         self.company_name = company_name
         self.staffs = staffs
-
 
     """
     实现序列化中的抽象方法 不变的序列化对象 Sequence
@@ -36,8 +44,8 @@ class Group:
         :return:
         """
         # return self.staffs[item]  # iteam 这里返回的实际上就是一个切片的对象值
-        cls = type(self) # 获取到当前对象 返回group类型
-        if isinstance(item,slice):
+        cls = type(self)  # 获取到当前对象 返回group类型  这个对象就是-slice
+        if isinstance(item, slice):
             return cls(group_name=self.group_name, company_name=self.company_name, staffs=staffss[item])
         elif isinstance(item, numbers.Integral):
             return cls(group_name=self.group_name, company_name=self.company_name, staffs=[staffss[item]])
@@ -56,21 +64,19 @@ class Group:
 
 
 staffss = ['landing1', 'landing2', 'landing3', 'landing4']
-group = Group(company_name="成都公司", group_name="user", staffs=staffss)
+group = Group(company_name="北京网", group_name="users", staffs=staffss)
 reversed(group)
-# submit = group[:2]  # 切片后还是group 而不是list 这样的group就是一个切片对象
+submit = group[:2]  # 切片后还是group 而不是list 这样的group就是一个切片对象
 
 # 这里也就调用了魔法函数
-# # group[0]  # 这个时候的对象就是一个int类型对象了
-# print(len(group))
+# group[0]  # 这个时候的对象就是一个int类型对象了  这个时候就实现了一个切片类型了
+print(len(group))
 
 # 这里也就调用了魔法函数
-# print(submit)
+print(submit)
 
 # 这里也就调用了魔法函数
 if "landing2" in staffss:
     print("yes")
 else:
     print("false")
-
-
