@@ -45,10 +45,11 @@ class Group:
         """
         # return self.staffs[item]  # iteam 这里返回的实际上就是一个切片的对象值
         cls = type(self)  # 获取到当前对象 返回group类型  这个对象就是-slice
+
         if isinstance(item, slice):
-            return cls(group_name=self.group_name, company_name=self.company_name, staffs=staffss[item])
+            return cls(group_name=self.group_name, company_name=self.company_name, staffs=self.staffs[item])
         elif isinstance(item, numbers.Integral):
-            return cls(group_name=self.group_name, company_name=self.company_name, staffs=[staffss[item]])
+            return cls(group_name=self.group_name, company_name=self.company_name, staffs=self.staffs[item])
 
     def __len__(self):
         return len(self.staffs)
@@ -62,11 +63,17 @@ class Group:
         else:
             return False
 
+    def __getattr__(self, item):
+        return "你的数据类型没找到"
+
+    # def __str__(self):
+    #     return self.company_name
+
 
 staffss = ['landing1', 'landing2', 'landing3', 'landing4']
 group = Group(company_name="北京网", group_name="users", staffs=staffss)
 reversed(group)
-submit = group[:2]  # 切片后还是group 而不是list 这样的group就是一个切片对象
+submit = group[:2]  # 切片后还是group 而不是list 这样的group就是一个切片对象 这里其实还是一个group对象
 
 # 这里也就调用了魔法函数
 # group[0]  # 这个时候的对象就是一个int类型对象了  这个时候就实现了一个切片类型了
@@ -74,6 +81,9 @@ print(len(group))
 
 # 这里也就调用了魔法函数
 print(submit)
+
+# 打印类型的迭代生成器
+print(group.staffs[2])
 
 # 这里也就调用了魔法函数
 if "landing2" in staffss:
