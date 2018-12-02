@@ -15,6 +15,7 @@
 """
 这个对象class 也就是可迭代的对象 也就是可迭代的类型
 
+
 """
 
 
@@ -37,6 +38,10 @@ class Company(object):
     def __len__(self):
         return len(self.employee)
 
+    def __str__(self):
+        for i in self.employee:
+            return i
+
 
 company = Company(['tom', 'bob', 'jane'])
 company1 = company[:2]
@@ -47,9 +52,10 @@ company1 这个对象本身是没有实现len这个方法的，如果直接调�
 但是了self.employee 这个对象是实现了len这个方法的，如果说我们直接调用这样的对象是可以实现len方法的
 """
 print(len(company1))  # 其实这样的话魔法函数是会影响到我们内置函数的本身的
+print(company)
 
-for em in company:
-    print(em)
+# for em in company:
+#     print(em)
 
 
 
