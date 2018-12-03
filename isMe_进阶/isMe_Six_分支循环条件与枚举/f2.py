@@ -10,7 +10,7 @@ if else  for     swith
 """
 mode = False
 if mode:
-    print("我们走左边") # 这里是需要table区分的 不然if语句是不完整的 print是单独的一条语句
+    print("我们走左边")  # 这里是需要table区分的 不然if语句是不完整的 print是单独的一条语句
 # print("我们不想走了")
 else:
     print("我们走天上 !!!") 

@@ -6,7 +6,7 @@ Traceback (most recent call last):
 TypeError: must be str, not NoneType
 """
 
-import isMe_进阶.isMe_One.包模块函数作用域isMe.b2
+import isMe_进阶.isMe_Seven_包模块函数作用域.包模块函数作用域isMe.b2
 
 '''
 1 python  是更加容易理解的语言
