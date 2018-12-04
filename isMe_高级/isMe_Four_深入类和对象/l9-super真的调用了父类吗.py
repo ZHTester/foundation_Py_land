@@ -16,7 +16,7 @@ class A:
 class B(A):
     def __init__(self):
         print("B")
-        super().__init__()
+        super().__init__()  # super 也就是去获取到了父类 然后再去调用了这个 __init__方法
 
 # 既然我们重写了B的构造函数，那么我们为啥还有去调用super构造函数
 # Super - 执行顺序到底是什么样的 ？

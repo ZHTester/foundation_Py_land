@@ -93,6 +93,7 @@ Awaitable
 def __subclasshook__(cls, C):
 """
 
+
 class CacheBase(metaclass=abc.ABCMeta):
 
     # 这里就定义了一个抽象方法 因为添加了一个装饰
