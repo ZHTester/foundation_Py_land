@@ -2,6 +2,7 @@
   <dictionary name="Landing">
     <words>
       <w>awaitable</w>
+      <w>caled</w>
       <w>contanins</w>
       <w>contextlib</w>
       <w>coroutine</w>
