@@ -17,10 +17,10 @@ class Company:
         self.name = name
         self.staff = staff
 
-    def add(self,staff_name):
+    def add(self, staff_name):
         self.staff.append(staff_name)
 
-    def remove(self,staff_name):
+    def remove(self, staff_name):
         self.staff.remove(staff_name)
 
 
