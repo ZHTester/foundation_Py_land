@@ -41,7 +41,7 @@ if __name__ == "__main__":
     user.age = 44
     # 这样也就是取属性的模式来进行调用函数
     print(user._age)  # 设置值
-    print(user.age)  # 动态属性的值
+    # print(user.age)  # 动态属性的值
 
 
 

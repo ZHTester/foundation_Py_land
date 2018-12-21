@@ -3,8 +3,10 @@
 属性描述符和属性查找过程
 
 1 如果说User是一张表，那么字段我们有时候需要去判断他的字符串类型 比如说email 还是 name
-2 数据描述符与非数据属性描述符，对我们的属性的查找顺序是不一样的
+2 数据描述符与非数据属性描述符，对我们的属性的查找顺序是不一样的 。。。。。。
 3 属性查找其实就是django的一个module，其实也是orm实现的一个基础
+4 数据描述符和非数据描述符的一个优先级查找方式，以及 属性查找方式的中的 实例(对象属性类属性-属性描述符(数据描述符预计非数据描述符))
+
 
 """
 from datetime import date, datetime
@@ -60,8 +62,8 @@ class User:
         self._age = 0
         这个实例的
     """
-    # age = IntFeild()  # 这时候的age就是一个属性描述符
-    age = NonDataIntField()  # 这个时候他就进入到我们的非数据属性描述符中
+    age = IntFeild()  # 这时候的age就是一个属性描述符
+    # age = NonDataIntField()  # 这个时候他就进入到我们的非数据属性描述符中
 
 
 '''
@@ -71,11 +73,12 @@ class User:
 而对于描述符(__get__）的调用，则是发生在__getattribute__内部的。
 user = User(), 那么user.age 顺序如下：
 
-（1）如果“age”是出现在User或其基类的__dict__中， 且age是data descriptor(属性描述符)， 那么调用其__get__方法, 否则
+ (如果类当中定义了一个属性描述，且是数据描述符，那么他的属性查找类型是最高的)
+（1）如果“age”是出现在User(类型)或其基类的__dict__中， 且age是data descriptor(属性描述符)， 那么调用其__get__方法, 否则
 
-（2）如果“age”出现在user的__dict__中， 那么直接返回 obj.__dict__[‘age’]， 否则
+（2）如果“age”出现在user(对象)的__dict__中， 那么直接返回 obj.__dict__[‘age’](也就是会返回对象里面的这个值)， 否则
 
-（3）如果“age”出现在User或其基类的__dict__中
+（3）如果“age”出现在User或其基类的__dict__中(这才回去类中去查找)
 
 （3.1）如果age是non-data descriptor，那么调用其__get__方法， 否则
 
@@ -94,7 +97,7 @@ if __name__ == "__main__":
     这个时候instace 就是User value就是我们设定的值30 
 
     """
-    # user.age = 30
+    user.age = 30
     """
     如果“age”出现在user的__dict__中， 那么直接返回 obj.__dict__[‘age’]，
     则我们直接返回这样的一个属性描述符的参数
