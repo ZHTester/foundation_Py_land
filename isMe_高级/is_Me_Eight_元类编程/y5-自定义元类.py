@@ -1,6 +1,8 @@
 """
 自定义元类
 1 首先类也是对象，type创建类的类
+2 类的本身也就是一个对象
+3 也就是动态创建类
 
 """
 
@@ -28,7 +30,7 @@ if __name__ == "__main__":
     """
     myClass = create_class("user")  # myClass 其实就是user这个类，这个类我们是可以用来生成实例的
     my_obj = myClass()  # 调用这个类 这个实例my_obj<--->其实是user类型的
-    print(my_obj)  # 这里就会打印出一个user
+    print(my_obj)  # 这里就会打印出一个user  这个实际上的类就是User这样的一个类
     pass
 
 

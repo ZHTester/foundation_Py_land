@@ -35,17 +35,17 @@ def create_class(name):
 
 
 def say(self):
-    return "i am say"
+    return "i am say method"
     # return self.name
 
 
 # 这个就是User这个类的基类 继承了这个基类
 class BaseClass:
     def answser(self):
-        return "i am baseclass"
+        return "i am Baseclass method"
 
 
-# User = type("User", (), {"name": "landing"})  # 这样也是创建了一个类
+# User = type("User", (), {"name": "landing"})  # 这样也是创建了一个类  创建类
 
 if __name__ == "__main__":
     """
@@ -58,10 +58,13 @@ if __name__ == "__main__":
     # print(type(my_obj))  # 这里就获取到了这个my_obj这个类型的 <class '__main__.create_class.<locals>.User'>
 
     User = type("User", (BaseClass,), {"name": "landing","say": say})  # 这样也是创建了一个类
-    my_obj = User()
+    my_obj = User()  # 这样创建的也是一个类，这样和我们通过class创建的也是一样的类 这点我们需要特别注意
     print(type(my_obj))  # <class '__main__.User'> 这个类最要是在main函数下的
     print(my_obj.name)  # 这样就可以访问这个类下面的属性
     print(my_obj.say())  # 这样就可以调用使用type创建的方法了
     print(my_obj.answser())  # 这里就是调用了基类的方法，因为我们这里的user都继承了answser的基类
 
-    pass
+
+
+
+
