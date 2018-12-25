@@ -10,7 +10,7 @@
 这一节课主要关注7月老师的讲解课程
 
 """
-from isMe_高级.isMe_Four_深入类和对象.类方法_静态方法_实例方法 import Date
+from isMe_高级.isMe04_Four_深入类和对象.类方法_静态方法_实例方法 import Date
 
 
 class User:
