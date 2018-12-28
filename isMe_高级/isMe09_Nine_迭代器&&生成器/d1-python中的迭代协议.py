@@ -30,5 +30,16 @@ python中异步IO与协程中的关键点
 from collections.abc import Iterable, Iterator
 
 a = []
-print(isinstance(a, Iterable))  # 也就是说明序列 变为可迭代对象
+iter_rator = iter(a)
+print(isinstance(a, Iterable))  # 也就是说明序列 变为可迭代对象 - 可迭代的对象
 print(isinstance(a, Iterator))  # 也就是说明序列 是可迭代对象，但并不是迭代器
+
+
+
+
+
+
+
+
+
+
