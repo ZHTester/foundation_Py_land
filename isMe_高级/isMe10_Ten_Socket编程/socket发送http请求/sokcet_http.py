@@ -1,6 +1,7 @@
 # coding=utf-8
 __author__ = 'landing'
 __data__ = '2019/1/2  18:43'
+
 """
 1 socket 也就是处于http请求之下的一种请求模式，也就是基于数据层与传输层之间的一种socket接口
 2 request库其实也就是基于urllib来完成的，而这个urllib其实也就是基于socket来完成的，
