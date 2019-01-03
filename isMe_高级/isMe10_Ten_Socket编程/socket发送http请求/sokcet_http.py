@@ -9,6 +9,7 @@ __data__ = '2019/1/2  18:43'
   每种语言封装的接口类型不一样而已。 
 
 from urllib.parse import urlparse ---- urlparse其实就是用来解析url的，这里并不是用来发起socket连接的
+3 我们使用socket就是为了解决长连接的一种问题 
 
 """
 import socket
