@@ -4,19 +4,19 @@ __data__ = '2019/1/2  15:31'
 """
 socketClient - 客户端
 ***********************
-socket 与 socketServer 通讯
+socket发送http请求 与 socketServer 通讯
 1 通过这个列子我们将区别到socket编程与Https编程的一个区别
 *****------******
 2 socket编程模式(无论是python还是java socket编程方式都是一样的形式)
 *****------******
 server端                                      client端
 ------- 
-socket
+socket发送http请求
 --- sokcet是介于传输层与网络层之间的一个接口(协议)(这个时候也就是协议编程)
 --- 每一个应用程序都添加上一个端口这样就能区分不同的应用程序了 这样我们就不需要指明应用了
 bind(协议 地址 端口) 
 listen(监听客户端socket请求)
-accept                                          socket
+accept                                          socket发送http请求
 阻塞等待连接请求(新套接字)<------三次握手-----    connect()
 recv()<--------------------------------------- send()
 --- (只要连接不断开，服务端能一直给客户端发送请求,(而Http请求就是每次发送请求都会经历三次捂手协议))
