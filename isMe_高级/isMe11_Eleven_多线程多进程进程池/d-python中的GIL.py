@@ -3,7 +3,7 @@ __author__ = 'landing'
 __data__ = '2019/1/4  10:49'
 
 """
-python 中的 GIL---
+python 中的 GIL ---
 ------------------
 GIL全称Global Interpreter Lock
 1 python中的一个线程是对应与一个C语言中的线程。

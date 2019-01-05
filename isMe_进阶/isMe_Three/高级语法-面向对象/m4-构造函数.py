@@ -39,8 +39,13 @@ class StudentHomework:
 # 但是在内存中的地址是不相同的，说明在计算机是不相同的 但是在现实世界上是相同的，这也就是现实世界刻画在计算机世界的一个概念
 # 下面的过程在调用构造函数是三次
 
-student = StudentHomework('北京大人', 28)
-print(student.name)  # 直接去调用方法下面的属性
+student1 = StudentHomework('北京大人', 28)
+# print(student1.name)  # 直接去调用方法下面的属性
+# pass
+
+student2 = StudentHomework('北京大人1', 28)
+student1.do_homework()
+# print(student1.name)
 
 # a = student2.__init__()  # 在实际的调用过程中是不存在这样的一个调度方式的
 # print(a)
