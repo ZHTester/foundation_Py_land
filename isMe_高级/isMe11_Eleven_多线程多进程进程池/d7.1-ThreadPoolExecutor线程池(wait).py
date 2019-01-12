@@ -8,6 +8,7 @@ wait方法 --- 主线程 阻塞
 from concurrent.futures import wait  这就是这样的一个方法
 意思就是制定wait() 某些task 和很多task 执行完成才继续往下面执行
 
+
 """
 from concurrent.futures import ThreadPoolExecutor, wait, FIRST_COMPLETED
 
