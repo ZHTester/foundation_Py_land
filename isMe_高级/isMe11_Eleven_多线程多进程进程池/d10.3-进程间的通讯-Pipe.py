@@ -2,37 +2,40 @@
 __author__ = 'landing'
 __data__ = '2019/1/14  17:33'
 """
-1 进程间的通讯Pipe
-2 Pipe是简化版的Queue 
+1 通过Pipe 实现进程间的通讯 ---
+2 pipe的性能是高于queue的
 
 """
 from multiprocessing import Process, Queue, Pool,Manager,Pipe
 import time
 
 
-def producer(queue):
-    queue.put("a")
+def producer(pipe):
+    pipe.send("landing")
     time.sleep(2)
 
 
-def consumer(queue):
-    time.sleep(2)
-    data = queue.get()
-    print(data)
+def consumer(pipe):
+    print(pipe.recv())
 
 
 if __name__ == "__main__":
-    # from queue import Queue
-    # from multiprocessing import managers
-    # from multiprocessing import Queue
+
     # pool间的进程间通讯需要使用manager中的Queue
+    # pipe只适用于2个进程
     recevie_pipe, send_pipe = Pipe()
     pool = Pool(2)
-    pool.apply_async(producer, args=(queue,))
-    pool.apply_async(consumer, args=(queue,))
+    my_producer = Process(target=producer, args=(send_pipe,))
+    my_consumer = Process(target=consumer, args=(recevie_pipe,))
 
-    pool.close()
-    pool.join()  # multiprocessing 中的Queue 不能应用于Pool进程池中
+    my_producer.start()
+    my_consumer.start()
+
+    my_producer.join()
+    my_consumer.join()
+
+
+
 
 
 
