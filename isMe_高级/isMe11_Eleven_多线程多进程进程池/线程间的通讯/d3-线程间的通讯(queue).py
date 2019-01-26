@@ -3,10 +3,11 @@ __author__ = 'landing'
 __data__ = '2019/1/7  11:44'
 """
 消息队列其实也就是一个队列，在很多时候
-共享变量queue - 安全可靠 - 通过queue的方式来实现线程间的数据同步。
+共享变量queue - 安全可靠 - 通过queue的方式来实现线程间的数据同步。 
 1 Queue也就是消息队列
 2 queue的常用方法就是 put(阻塞的方法) 和 get 
 3 queue就是可以再多个线程请求参数的时候，做到线程安全的一个效果，不会造成资源的争抢而导致数据的不安全性
+
 4 _qsize 得到队列的长度 
   empty 判断队列是否为空
   full 判断队列是否已满，如果已满，那么执行put就会实现一个阻塞，等到有空闲的容量为止。
@@ -24,10 +25,12 @@ import time
 
 def get_detail_htm(queue):
     while True:
-        url = queue.get()  # 共享变量的方式进行通讯
+        # 共享变量的方式进行通讯
+        # get方法是一个阻塞的方法，也就是队列为空，那么就会队列就一直停留在这个位置，等待有数据的时候才会停止阻塞。
+        url = queue.get()
         # 爬取文章详情页
-        print("get detail html start....")
-        time.sleep(2)
+        print("get detail html start....",url)
+        time.sleep(0.5)
         print("get detail html end .....")
 
 
@@ -36,20 +39,21 @@ def get_detail_url(queue):
     while True:
         # 爬取文章列表页-url
         print("get  detail url start....")
-        time.sleep(4)
-        for i in range(20):
+        time.sleep(1)
+        for i in range(5):
             queue.put("http://projectsedu.com/{id}".format(id=i))  # 共享变量的方式进行通讯
         print("get detail url  end .....")
 
 
 if __name__ == "__main__":
-    detail_url_queue = Queue(maxsize=1000)  # 消息队列Queue
-
+    # 消息队列Queue 这里的数据就是查看Queue的源码
+    # 如果说Queue过大的话实际上是会对内存有影响的
+    detail_url_queue = Queue(maxsize=10)
     thread_detail_url = threading.Thread(target=get_detail_url, args=(detail_url_queue,))
-    for i in range(10):
+    for i in range(5):
         html_thread = threading.Thread(target=get_detail_htm, args=(detail_url_queue,))
         html_thread.start()
-
+    thread_detail_url.start()
     start_time = time.time()
     # 当主线程退出的时候, 子线程kill掉 ....
     print("last time:{}".format(time.time() - start_time))

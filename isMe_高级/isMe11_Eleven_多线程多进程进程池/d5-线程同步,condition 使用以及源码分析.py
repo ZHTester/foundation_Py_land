@@ -3,9 +3,11 @@ __author__ = 'landing'
 __data__ = '2019/1/8  14:47'
 """
 线程同步 - condition 使用以及源码分析  ---- 条件变量
-condition 也就是用于线程之间的锁，用于复杂间的线程数据同步(锁)(也称之为条件变量)
+condition 也就是用于线程之间的锁，用于复杂间的线程数据同步(锁) ---- (也称之为条件变量)
 condition - 生产者消费者模式(条件变量)
+from threading import Condition  --- 这个也就叫条件变量
 
+天猫精灵和小爱 也就是2个线程
 
 """
 from threading import Condition

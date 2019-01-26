@@ -14,7 +14,7 @@ def get_detail_htm():
     detail_url_list = variables.detail_url_list
     while True:
         if len(detail_url_list):
-            url = detail_url_list.pop()  # 共享变量的方式进行通讯
+            url = detail_url_list.pop()  # 共享变量的方式进行通讯 这样的操作就是线程不安全的
             # 爬取文章详情页
             print("get detail html start....")
             time.sleep(2)
@@ -41,7 +41,7 @@ def get_detail_url(detail_url_list):
 if __name__ == "__main__":
     # target=get_detail_htm, args=("",)
     thread_detail_url = threading.Thread(target=get_detail_url, args=(variables.detail_url_list,))
-    for i in range(10):
+    for i in range(2):
         html_thread = threading.Thread(target=get_detail_htm, args=(variables.detail_url_list,))
         html_thread.start()
 

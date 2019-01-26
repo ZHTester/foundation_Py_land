@@ -9,7 +9,7 @@ __data__ = '2019/1/5  13:38'
 2 对于IO操作来说，多线程和多进程的操作，性能差别不大。 甚至我们的多线程
   比我们的多进程的性能还要高。对于系统来说，线程的调度是要比进程的调度更
   加轻量级的。
-3 通过Thread类来实例化 
+3 通过Thread类来实例化 ----
 4 在python中我们可以继承Thread来进行一个多线程的编程
 
 **************************
@@ -23,25 +23,26 @@ import time
 
 
 def get_detail_htm(url):
-    print("get detail html start....")
+    print("get detail html start01....")
     time.sleep(2)
-    print("get detail html end .....")
+    print("get detail html end01 .....")
 
 
 def get_detail_url(url):
-    print("get  detail url start....")
+    print("get  detail url start02....")
     time.sleep(4)
-    print("get detail url  end .....")
+    print("get detail url  end02 .....")
 
 
 if __name__ == "__main__":
-    # target=get_detail_htm, args=("",)
+    # target=get_detail_htm(所需要运行的函数), args=("",)
     # 这里也就是含有三个线程 2个新建的线程和一条我们所使用的主线程都是并行的
     thread1 = threading.Thread(target=get_detail_htm, args=("",))
     thread2 = threading.Thread(target=get_detail_url, args=("",))
+    # 当主线程退出 子线程kill掉
     # setDaemon 也就是将对应的线程设置为守护线程 非守护线程执行完成后，守护线程就kill掉了
     # thread1.setDaemon(True)
-    thread2.setDaemon(True)
+    # thread2.setDaemon(True)
     start_time = time.time()
     thread1.start()  # 启动线程
     thread2.start()
