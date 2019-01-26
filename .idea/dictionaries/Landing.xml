@@ -14,6 +14,9 @@
       <w>cpython</w>
       <w>deflut</w>
       <w>dosomething</w>
+      <w>epoll</w>
+      <w>errno</w>
+      <w>ewouldblock</w>
       <w>excutor</w>
       <w>fasle</w>
       <w>feild</w>
@@ -27,6 +30,7 @@
       <w>isintance</w>
       <w>itter</w>
       <w>myreadlines</w>
+      <w>nonblock</w>
       <w>progess</w>
       <w>rator</w>
       <w>recevie</w>
