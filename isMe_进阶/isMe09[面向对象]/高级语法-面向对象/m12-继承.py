@@ -19,7 +19,7 @@ python中是允许多继承   一个子类可以继承多个父类
 
 
 # from .m13-继承 import People
-# from isMe_进阶.isMe_Three.高级语法-面向对象.m13 import Human
+# from isMe_进阶.isMe09[面向对象].高级语法-面向对象.m13 import Human
 
 class Human:
     sum = 0

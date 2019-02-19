@@ -5,7 +5,6 @@ import threading
 from threading import Lock
 
 a = 0
-
 lock = Lock()
 
 
