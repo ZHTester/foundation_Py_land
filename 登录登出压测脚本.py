@@ -1,4 +1,6 @@
 # coding=utf-8
+import os
+
 __author__ = 'landing'
 __data__ = '2019/2/8  16:39'
 
@@ -30,10 +32,16 @@ que = Queue()  # 消息队列 对象
 
 # 登录接口
 def get_login(queue, url, data):
+    global res, oid, name
     lock.acquire()  # 加一把锁
-    res = requests.post(url=url, data=data).json() # post请求 200
-    oid = res["data"]["oid"]
-    name = res["data"]["username"]
+    res = requests.post(url=url, data=data).json()  # post请求 200
+    try:
+        oid = res["data"]["oid"]  # null
+        name = res["data"]["username"]
+    except KeyError as e:
+        # os._exit(0)  # 退出程序
+        pass
+
     queue.put(oid)  # 往消息队列放入数据
     queue.put(name)  # 往消息队列放入数据
     lock.release()
@@ -41,18 +49,18 @@ def get_login(queue, url, data):
 
 
 def get_loginout(queue):
+    global res
     lock.acquire()
     oid = queue.get()  # 取数据了
     name = queue.get()  # 取数据了
     data_out = {"username": name, "oid": oid}
     url_out = "http://1029a.s1119.com/m/php//action.php?action=logout"
     res = requests.post(url=url_out, data=data_out).json()
-
     lock.release()
     print("登出用户------", name, res)
 
 
-for i in range(2, 10):
+for i in range(2, 200):
     q = Queue(maxsize=10)  # 消息队列
     name = 'dstest000' + str(i)  # 造数据 dest0001 int txt excle mysql
     data = {"username": name, "password": "aeuio888", }

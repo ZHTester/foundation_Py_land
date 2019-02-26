@@ -9,7 +9,7 @@ python数据格式类型转换成str json格式的数据类型
 """
 import json
 
-a = [{'name': 'jj'}, {'name': 'jj'}, {'name': 'jj'}]
+a = [{'name': 'jj'}, {'name': 'jj'}, {'name': 'jj'}]  # 序列化
 s = json.dumps(a)
 print(s)
 print(type(s))

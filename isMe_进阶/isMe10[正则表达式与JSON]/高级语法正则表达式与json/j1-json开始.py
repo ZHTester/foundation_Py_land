@@ -1,6 +1,6 @@
 """
 1 什么是json javaScript Object Notation 的一个简写
-          javaScript 对象标记
+        javaScript 对象标记
 2 json的本质就是一种轻量级的数据交换格式
 3 json是什么 json对象是什么 json字符串又是什么
 4 json就是一种数据格式 --- 其中字符串就是json的一个表现形式
