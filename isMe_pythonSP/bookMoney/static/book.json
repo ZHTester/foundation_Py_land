@@ -1,0 +1,9 @@
+{
+"login":{"username":"dstest0002","password":"aeuio888","varcode":""},
+"changeMoney":{"username":"dstest0001","oid":"","cout":"1","cin":"2","money":""},
+"manniu":{"pcmn": "6000-142-1","username":"dstest0001","password": "aeuio888"},
+"qishu":{"pcmn": "6000-142-1","termCount": "5"},
+"touzhu":{"type":"bet", "client_name":"dstest0001", "room_id":"18", "oid":"","table_id":"12", "site_id":"6000","game_type":"xy28","now_term":"911839","content":[{"msg":"大11","type":"big","money":"11","num":"","odds":"2","odds_1314":"1.8"}]},
+"yanzm":{}
+}
+
