@@ -6,6 +6,7 @@ __data__ = '2019/3/2  16:56'
 1 loads json -< python
 2 dumps python-< json
 3 文本文件转换成json
+4
 
 """
 import json
