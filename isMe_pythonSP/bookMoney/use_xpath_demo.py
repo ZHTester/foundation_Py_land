@@ -37,9 +37,6 @@ def parse():
     print(len(p), "\n")
     print(p[0])
 
-
-
-
     f.close()
 
 
