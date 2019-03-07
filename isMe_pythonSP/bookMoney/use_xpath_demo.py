@@ -13,6 +13,7 @@ import requests
 def parse():
     f = open("./static/index.html", "r", encoding="utf-8")
     s = f.read()
+
     selector = html.fromstring(s)  # 这里我们就得到一个xpath对象
     h3 = selector.xpath('/html/body/h3/text()')  # 获取到html中的数据 通过html文件
     print(h3[0], "\n")
