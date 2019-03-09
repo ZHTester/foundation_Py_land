@@ -16,5 +16,6 @@ python之所以将所有的类型都变为对象，这就是python之所以为�
 9 其他 ** 1 模块类型  2 class和实例  3 函数类型  4 方法类型 5 代码类型
          6 object对象 7 type类型 8 elipsis类型(省略号类型) 9 notimplemented
 
+
 """
 

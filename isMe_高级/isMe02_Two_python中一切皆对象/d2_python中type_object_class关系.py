@@ -38,7 +38,7 @@ print(type(1))
 print(type(int))
 print("----str-------")
 """
-1 b 实际上是通过str这个类生成的对象实例化 而str这个实例对象是通过type生成的
+1                                                                                                                                                                                                                        
   而type实例又是他本身也就是type，那么对象的本身就是对象，那么这也就是python一切接对象的根本
   也是python灵活的根本。
 
@@ -63,6 +63,7 @@ print('------int str--------')
 """
 int str 等一些python内建函数都的基类都是object的，但是他是由type生成的 
 """
+
 print(int.__bases__)
 print(str.__bases__)
 print('-------Mystudent-------')
