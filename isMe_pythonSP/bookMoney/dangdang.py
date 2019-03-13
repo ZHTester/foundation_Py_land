@@ -24,7 +24,7 @@ def spider(sn):
         print(href)
         money = li.xpath('p[@class="price"]/span[@class="search_now_price"]/text()')  # 钱
         print(money[0].replace('¥', ' '))
-        cbs = li.xpath('p[@class="search_shangjia"]/a/text()')  # 钱
+        cbs = li.xpath('p[@class="search_shangjia"]/a/text()')  #
         print('dangdang自营' if cbs == [] else cbs[0])
 
 
