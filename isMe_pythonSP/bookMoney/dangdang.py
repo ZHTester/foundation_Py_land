@@ -5,6 +5,8 @@ __data__ = '2019/3/7  10:22'
 当当网 爬取数据
 爬虫 
 
+
+
 """
 import requests
 from lxml import html
@@ -30,6 +32,10 @@ def spider(sn):
 
 if __name__ == "__main__":
     spider("Python编程 从入门到实践")
+
+
+
+
 
 
 
