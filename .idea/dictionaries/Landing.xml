@@ -12,6 +12,7 @@
       <w>bbin</w>
       <w>caled</w>
       <w>clearfix</w>
+      <w>configparser</w>
       <w>contanins</w>
       <w>contextlib</w>
       <w>coroutine</w>
@@ -42,6 +43,7 @@
       <w>lxml</w>
       <w>myreadlines</w>
       <w>nonblock</w>
+      <w>nond</w>
       <w>oobeij</w>
       <w>progess</w>
       <w>rator</w>
