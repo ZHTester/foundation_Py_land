@@ -30,12 +30,18 @@ class funcitonstart:
     def user_click(self, key):
         self.get_user_element(key).click()
 
+    def run_main(self):
+        self.user_send_key('username', 'dstest0001')
+        self.user_send_key('password', 'aeuio888')
+        self.user_click('button')
+
 
 if __name__ == "__main__":
     fun = funcitonstart("http://pc.350gtv-intranet.com/#/login")
-    fun.user_send_key('username', 'dstest0001')
-    fun.user_send_key('password', 'aeuio888')
-    fun.user_click('button')
+    # fun.user_send_key('username', 'dstest0001')
+    # fun.user_send_key('password', 'aeuio888')
+    # fun.user_click('button')
+    fun.run_main()
 
 
 
