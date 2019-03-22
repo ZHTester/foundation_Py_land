@@ -10,13 +10,13 @@ import configparser
 
 
 class ReadIni:
-    def __init__(self, file_name=None, nond=None):
+    def __init__(self, file_name=None, node=None):
         if file_name is None:
-            file_name = self.load_ini('..\com_WebAuto\config\LocalElement.ini')
-        if nond is None:
-            self.nond = 'userElement'
+            file_name = '../config/LocalElement.ini'
+        if node is None:
+            self.node = 'userElement'
         else:
-            self.nond = nond
+            self.node = node
         self.cf = self.load_ini(file_name)
 
     def load_ini(self, file_name):
@@ -24,14 +24,14 @@ class ReadIni:
         cf.read(file_name)
         return cf  # 返回文件ini文件对象
 
-    def get_value(self):
-        data = self.cf.get(self.nond, 'username')
+    def get_value(self, key):
+        data = self.cf.get(self.node, key)
         return data
 
 
 if __name__ == '__main__':
     r = ReadIni()
-    print(r.get_value())
+    print(r.get_value('username'))
 
 
 
