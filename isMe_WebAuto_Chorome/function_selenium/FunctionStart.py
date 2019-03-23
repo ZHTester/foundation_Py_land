@@ -1,4 +1,6 @@
 # coding=utf-8
+import time
+
 __author__ = 'landing'
 __data__ = '2019/3/21  11:06'
 """
@@ -6,17 +8,18 @@ __data__ = '2019/3/21  11:06'
 
 """
 from selenium import webdriver
-from isMe_WebAuto_Chorome.function_selenium.find_Element import FindElement
+from isMe_WebAuto_Chorome.isMe_selenium.find_Element import FindElement
 
 
 class funcitonstart:
     def __init__(self, url):
         self.driver = self.get_driver(url)  # 设置公共变量driver
 
-    def get_driver(self,url):
+    def get_driver(self, url):
         driver = webdriver.Edge()
         driver.get(url)
         driver.maximize_window()
+        time.sleep(5)
         return driver
 
     def get_user_element(self, key):
@@ -34,22 +37,10 @@ class funcitonstart:
         self.user_send_key('username', 'dstest0001')
         self.user_send_key('password', 'aeuio888')
         self.user_click('button')
+        time.sleep(5)
+        self.driver.quit()
 
 
 if __name__ == "__main__":
     fun = funcitonstart("http://pc.350gtv-intranet.com/#/login")
-    # fun.user_send_key('username', 'dstest0001')
-    # fun.user_send_key('password', 'aeuio888')
-    # fun.user_click('button')
     fun.run_main()
-
-
-
-
-
-
-
-
-
-
-
