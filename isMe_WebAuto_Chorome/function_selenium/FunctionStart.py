@@ -8,15 +8,20 @@ __data__ = '2019/3/21  11:06'
 
 """
 from selenium import webdriver
-from isMe_WebAuto_Chorome.isMe_selenium.find_Element import FindElement
+from isMe_WebAuto_Chorome.base.find_Element import FindElement
 
 
 class funcitonstart:
-    def __init__(self, url):
-        self.driver = self.get_driver(url)  # 设置公共变量driver
+    def __init__(self, url, ite):
+        self.driver = self.get_driver(url, ite)  # 设置公共变量driver
 
-    def get_driver(self, url):
-        driver = webdriver.Edge()
+    def get_driver(self, url, ite):
+        if ite is 1:
+            driver = webdriver.Edge()
+        elif ite is 2:
+            driver = webdriver.Firefox()
+        else:
+            driver = webdriver.Chrome()
         driver.get(url)
         driver.maximize_window()
         time.sleep(5)
@@ -37,10 +42,17 @@ class funcitonstart:
         self.user_send_key('username', 'dstest0001')
         self.user_send_key('password', 'aeuio888')
         self.user_click('button')
+        usercode = self.get_user_element('button')
         time.sleep(5)
+        if usercode is None:
+            print('登录成功')
+        else:
+            self.driver.save_screenshot('../Image/codeError.png')
+        time.sleep(2)
         self.driver.quit()
 
 
 if __name__ == "__main__":
-    fun = funcitonstart("http://pc.350gtv-intranet.com/#/login")
-    fun.run_main()
+    for ite in range(4):
+        fun = funcitonstart("http://pc.350gtv-intranet.com/#/login", ite)
+        fun.run_main()
