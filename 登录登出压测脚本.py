@@ -63,7 +63,7 @@ def get_loginout(queue):
 for i in range(2, 200):
     q = Queue(maxsize=10)  # 消息队列
     name = 'dstest000' + str(i)  # 造数据 dest0001 int txt excle mysql
-    data = {"username": name, "password": "aeuio888", }
+    data = {"username": name, "password": "aeuio888"}
     url_login = "http://1029a.s1119.com/m/php/action.php?action=login"
 
     thread_login = threading.Thread(target=get_login, args=(q, url_login, data))

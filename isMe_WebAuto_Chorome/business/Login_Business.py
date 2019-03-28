@@ -6,7 +6,6 @@ __data__ = '2019/3/23  15:08'
 """
 login-business层 用例组合层 也就是操作Handle层的关系  业务层
 
-
 """
 
 from isMe_WebAuto_Chorome.handle.Login_Handle import LoginHandle
@@ -18,6 +17,7 @@ class LoginBusiness:
         self.login_h = LoginHandle(driver)
         self.login_p = LoginPage(driver)
 
+    # 操作层
     def login(self, username, password):
         self.login_h.Login_useName(username)
         self.login_h.Login_password(password)
