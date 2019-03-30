@@ -24,12 +24,8 @@ class LoginBusiness:
         self.login_h.Login_button()
 
     def Login_success(self):
-        try:
-            if self.login_p.userName_sucess() is None:
-                print("登录成功 .....")
-            else:
-                print("登录失败 .....")
-        except Exception as e:
-            print(e)
+        ls = self.login_p.userName_sucess()
+        return ls
+
 
 

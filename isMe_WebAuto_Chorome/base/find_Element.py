@@ -27,4 +27,5 @@ class FindElement:
             else:
                 return self.driver.find_element_by_class_name(value)
         except:
+            self.driver.save_screenshot('../Image/%s.png' % value)
             return None

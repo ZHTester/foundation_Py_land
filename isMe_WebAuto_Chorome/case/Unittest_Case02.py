@@ -28,7 +28,8 @@ class First_Unittest_Case02(unittest.TestCase):
         print(".............这是第一条case,必须使用test开头的形式02..............")
         self.Login_b.login('dstest0001', 'aeuio888')
         time.sleep(2)
-        self.Login_b.Login_success()
+        lss = self.Login_b.Login_success()
+        self.assertEqual(None, lss, msg="登录失败")
         time.sleep(2)
 
     # @unittest.skip("不执行这条")
@@ -36,7 +37,8 @@ class First_Unittest_Case02(unittest.TestCase):
         print(".............这是第一条case,必须使用test开头的形式..............")
         self.Login_b.login('dstest0002333', 'aeuio888')
         time.sleep(2)
-        self.Login_b.Login_success()
+        lss = self.Login_b.Login_success()
+        self.assertEqual(None, lss, msg="登录失败")
         time.sleep(2)
 
     def tearDown(self):

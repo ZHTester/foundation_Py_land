@@ -12,6 +12,8 @@ __data__ = '2019/3/26  13:28'
 import unittest
 from selenium import webdriver
 from isMe_WebAuto_Chorome.business.Login_Business import LoginBusiness
+import HTMLTestReportCN
+import os
 
 
 class First_Unittest_Case(unittest.TestCase):
@@ -30,7 +32,8 @@ class First_Unittest_Case(unittest.TestCase):
         print(".............这是第一条case,必须使用test开头的形式01..............")
         self.Login_b.login('dstest0001', 'aeuio888')
         time.sleep(2)
-        self.Login_b.Login_success()
+        lss = self.Login_b.Login_success()
+        self.assertEqual(None, lss, msg="登录失败")
         time.sleep(2)
 
     # @unittest.skip("不执行这条")
@@ -38,7 +41,8 @@ class First_Unittest_Case(unittest.TestCase):
         print(".............这是第一条case,必须使用test开头的形式01..............")
         self.Login_b.login('dstest0002333', 'aeuio888')
         time.sleep(2)
-        self.Login_b.Login_success()
+        lss = self.Login_b.Login_success()
+        self.assertEqual(None, lss, msg="登录失败")
         time.sleep(2)
 
     def tearDown(self):
@@ -52,7 +56,13 @@ class First_Unittest_Case(unittest.TestCase):
 
 if __name__ == "__main__":
     # unittest.main()
+    # suite_path = os.path.join(os.getcwd() + "\\report" + "\\UI.html")  # 获取到当前工程路径
+    suite_path = '../report/UI自动化测试结果报告.html'  # 获取到当前工程路径
+    print(suite_path)
+    f = open(suite_path, 'wb')
     suite = unittest.TestSuite()
     suite.addTest(First_Unittest_Case("test_login02"))
     suite.addTest(First_Unittest_Case("test_login01"))
-    unittest.TextTestRunner().run(suite)
+    # unittest.TextTestRunner().run(suite)
+    runner = HTMLTestReportCN.HTMLTestRunner(stream=f, title='UIReport', description="这是我们第一次的测试报告", verbosity=2)
+    runner.run(suite)
