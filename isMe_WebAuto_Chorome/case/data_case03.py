@@ -10,7 +10,7 @@ import ddt
 import unittest
 
 ex = opearExcel()
-data = ex.get_data() # 拿到所有的数据
+data = ex.get_data()  # 拿到所有的数据
 
 
 @ddt.ddt
