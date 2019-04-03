@@ -11,6 +11,7 @@ import time
 
 
 class ActionMethod:
+
     # 打开浏览器
     def open_browser(self, browser):
         if browser == 'chrome':
@@ -40,8 +41,8 @@ class ActionMethod:
         self.get_element(key).click()
 
     # 等待
-    def sleep_time(self):
-        time.sleep(3)
+    def sleep_time(self, ):
+        time.sleep(20)
 
     # 关闭浏览器
     def close_browser(self):

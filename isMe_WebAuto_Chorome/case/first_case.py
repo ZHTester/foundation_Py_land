@@ -46,3 +46,12 @@ class FirstCase:
 if __name__ == "__main__":
     f = FirstCase("http://pc.350gtv-intranet.com/#/login")
     f.test_login_Success()
+
+
+
+
+
+
+
+
+
