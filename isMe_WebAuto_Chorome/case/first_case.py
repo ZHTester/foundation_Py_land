@@ -16,6 +16,8 @@ class FirstCase:
         self.driver.get(url)
         self.driver.maximize_window()
         self.Login_b = LoginBusiness(self.driver)
+        ti = self.driver.title
+        print(ti)
 
     def test_login_PassWord_error(self):
         """

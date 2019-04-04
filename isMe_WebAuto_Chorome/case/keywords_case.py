@@ -43,7 +43,7 @@ class KeywordCase:
                         else:
                             print("没有else")
                     else:
-                        print('预期结果为空')
+                        print('控制台打印: --- 预期结果为空')
 
     # 获取预期结果值
     def get_except_result_value(self, data):

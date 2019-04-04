@@ -17,6 +17,7 @@ def driver_ini():
 
 def get_element(xpath):
     element = driver.find_element_by_xpath(xpath)
+    element = driver.find_element_by_link_text('封盘中')
     return element
 
 

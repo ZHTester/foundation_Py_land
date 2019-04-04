@@ -25,6 +25,10 @@ class ActionMethod:
     def get_url(self, url):
         self.driver.get(url)
 
+    # 放大窗口
+    def windowsMax(self):
+        self.driver.maximize_window()
+
     # 定位元素
     def get_element(self, key):
         find_element = FindElement(self.driver)
@@ -40,9 +44,20 @@ class ActionMethod:
     def click_element(self, key):
         self.get_element(key).click()
 
+    # 截图
+    def click_screenshot(self, name):
+        self.driver.save_screenshot('../Image/{}.png'.format(name))
+
+    # 判断是否封装投注方法
+    def betFunction(self, key):
+        if self.get_element(key) is self.driver.find_element_by_link_text('封盘中'):
+            time.sleep(240)
+        else:
+            "未封盘"
+
     # 等待
-    def sleep_time(self, ):
-        time.sleep(20)
+    def sleep_time(self, times):
+        time.sleep(times)
 
     # 关闭浏览器
     def close_browser(self):

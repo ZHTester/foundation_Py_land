@@ -10,11 +10,11 @@ import configparser
 
 
 class ReadIni:
-    def __init__(self, file_name=None, node=None):
+    def __init__(self, node, file_name=None):
         if file_name is None:
             file_name = '../config/LocalElement.ini'
         if node is None:
-            self.node = 'userElement'
+            self.node = 'UserElement'
         else:
             self.node = node
         self.cf = self.load_ini(file_name)
