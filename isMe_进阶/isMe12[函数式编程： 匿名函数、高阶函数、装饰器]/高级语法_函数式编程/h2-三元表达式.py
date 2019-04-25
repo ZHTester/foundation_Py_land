@@ -12,7 +12,7 @@ x>y ? x:y 在其他语言中是这样表达三元表达式
 """
 x = 1
 y = 8
-r = x if x > y else y
+r = x if x < y else y
 print(r)
 
 

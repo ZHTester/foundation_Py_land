@@ -1,0 +1,7 @@
+request库的难点使用方式
+----
+1 response返回状态码
+2 request 通过流的形式下载图片
+3 request中的钩子事件
+
+

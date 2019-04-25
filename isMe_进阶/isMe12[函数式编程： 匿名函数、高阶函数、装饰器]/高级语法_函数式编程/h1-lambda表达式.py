@@ -13,6 +13,7 @@ def add(x, y):
 
 
 # 匿名函数
+
 f = lambda x, y: x + y  # 其中expression只能实现简单的表达式不能实现主要的代码块 不能是个代码块
 # f1 = lambda x, y: a = x + y  # a = x + y 不是表达式是一个完成的代码语句了这样就会导致报错了
 

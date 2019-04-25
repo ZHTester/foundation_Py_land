@@ -21,7 +21,7 @@ class ExcelUtil:
             index = 0
         self.data = xlrd.open_workbook(self.excel_path)
         self.table = self.data.sheets()[index]
-        # [[],[]]
+        # [[],[]] 取值形式
 
     # 获取excel数据，按照每行一个list，添加到一个大的list里面
     def get_data(self):
