@@ -13,7 +13,7 @@ import requests
 def download_picture():
     url = 'http://cdn.onlinewebfonts.com/svg/img_326384.png'
     # stream=True 以流的形式传输到我们的返回值中，然后在读取数据
-    r = requests.get(url=url, stream=True)
+    r = requests.get(url=url, stream=True)  # 流的形式下载文件
     with open('2.png', 'wb') as fp:
         for check in r.iter_content(128):
             fp.write(check)  # 这里就写入到文件了

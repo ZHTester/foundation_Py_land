@@ -5,6 +5,7 @@ __data__ = '2019/4/15  14:14'
 Log 日志文件 记录错误的时候判断文件 
 
 
+
 """
 import logging
 logger = logging.getLogger()  # 创建logging的对象
