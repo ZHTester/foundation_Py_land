@@ -40,6 +40,7 @@
       <w>gbps</w>
       <w>getavailablepayment</w>
       <w>getpaymentchannels</w>
+      <w>goto</w>
       <w>homeword</w>
       <w>idemo</w>
       <w>imap</w>
@@ -47,6 +48,7 @@
       <w>intem</w>
       <w>isintance</w>
       <w>itter</w>
+      <w>jingdian</w>
       <w>lbutton</w>
       <w>linktext</w>
       <w>lxml</w>
@@ -54,17 +56,22 @@
       <w>nonblock</w>
       <w>nond</w>
       <w>oobeij</w>
+      <w>pankou</w>
       <w>passwprd</w>
       <w>progess</w>
       <w>rator</w>
       <w>readly</w>
       <w>recevie</w>
+      <w>recv</w>
       <w>recvfrom</w>
+      <w>requsets</w>
       <w>requsts</w>
+      <w>rotocol</w>
       <w>schoole</w>
       <w>screenshot</w>
       <w>sendkey</w>
       <w>setblocking</w>
+      <w>setcookie</w>
       <w>shangjia</w>
       <w>sitching</w>
       <w>sokcet</w>
