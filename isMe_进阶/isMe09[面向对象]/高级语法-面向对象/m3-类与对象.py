@@ -1,5 +1,5 @@
 """
-类与对象
+类与对象的区别是什么
 1 类和对象最直接的关系就是通过实例化来关联起来的 student =  Student()
 2 类就是现实世界与思维世界中实体在计算机的一个反应，
   他将数据与数据之上的一些封操作装在了一起
@@ -16,7 +16,8 @@ class StudentHomework:
     name = ''
     age = 0
 
-    def do_homework(self):
+    @classmethod
+    def do_homework(cls):
         print('home_work')
 
 

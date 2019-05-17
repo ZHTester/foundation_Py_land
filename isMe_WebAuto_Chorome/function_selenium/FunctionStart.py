@@ -8,7 +8,7 @@ __data__ = '2019/3/21  11:06'
 
 """
 from selenium import webdriver
-from isMe_WebAuto_Chorome.base.find_Element import FindElement
+from isMe_WebAuto.base.find_Element import FindElement
 
 
 class funcitonstart:

@@ -2,7 +2,7 @@
 __author__ = 'landing'
 __data__ = '2019/3/23  14:44'
 
-from isMe_WebAuto_Chorome.page.Login_page import LoginPage
+from isMe_WebAuto.page.Login_page import LoginPage
 """
 1 操作层的意思就是说获取对应的元素的一个操作层
 

@@ -1,6 +1,6 @@
 # coding=utf-8
-from isMe_WebAuto_Chorome.util.excel_util import ExcelUtil
-from isMe_WebAuto_Chorome.util.read_ini import ReadIni
+from isMe_WebAuto.util.excel_util import ExcelUtil
+from isMe_WebAuto.util.read_ini import ReadIni
 
 __author__ = 'landing'
 __data__ = '2019/3/22  14:58'

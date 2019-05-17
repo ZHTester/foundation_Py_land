@@ -5,8 +5,8 @@ __data__ = '2019/3/29  15:11'
 import time
 from selenium import webdriver
 import HTMLTestReportCN
-from isMe_WebAuto_Chorome.business.Login_Business import LoginBusiness
-from isMe_WebAuto_Chorome.util.excel_util import opearExcel
+from isMe_WebAuto.business.Login_Business import LoginBusiness
+from isMe_WebAuto.util.excel_util import opearExcel
 import ddt
 import unittest
 

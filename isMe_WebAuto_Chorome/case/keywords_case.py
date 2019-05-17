@@ -5,8 +5,8 @@ __data__ = '2019/4/3  15:06'
 关键字驱动 - 测试用例集合 
 
 """
-from isMe_WebAuto_Chorome.util.excel_util import ExcelUtil
-from isMe_WebAuto_Chorome.keyword.actionMethod import ActionMethod
+from isMe_WebAuto.util.excel_util import ExcelUtil
+from isMe_WebAuto.keyword.actionMethod import ActionMethod
 
 
 class KeywordCase:

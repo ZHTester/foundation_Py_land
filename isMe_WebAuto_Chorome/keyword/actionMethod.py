@@ -6,7 +6,7 @@ __data__ = '2019/4/2  9:35'
 
 """
 from selenium import webdriver
-from isMe_WebAuto_Chorome.base.find_Element import FindElement
+from isMe_WebAuto.base.find_Element import FindElement
 import time
 
 

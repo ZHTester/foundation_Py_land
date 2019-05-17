@@ -11,7 +11,7 @@ __data__ = '2019/3/26  13:28'
 """
 import unittest
 from selenium import webdriver
-from isMe_WebAuto_Chorome.business.Login_Business import LoginBusiness
+from isMe_WebAuto.business.Login_Business import LoginBusiness
 import HTMLTestReportCN
 import os
 

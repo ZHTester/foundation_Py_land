@@ -5,7 +5,7 @@ __data__ = '2019/3/25  14:12'
 页面元素封装层
 
 """
-from isMe_WebAuto_Chorome.base.find_Element import FindElement
+from isMe_WebAuto.base.find_Element import FindElement
 from selenium import webdriver
 
 

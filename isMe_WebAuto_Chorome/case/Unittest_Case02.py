@@ -9,7 +9,7 @@ __data__ = '2019/3/26  14:57'
 """
 import unittest
 from selenium import webdriver
-from isMe_WebAuto_Chorome.business.Login_Business import LoginBusiness
+from isMe_WebAuto.business.Login_Business import LoginBusiness
 
 
 class First_Unittest_Case02(unittest.TestCase):

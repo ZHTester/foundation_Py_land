@@ -5,7 +5,7 @@ __data__ = '2019/3/23  14:28'
 Po 模型建立 case用例集合
 
 """
-from isMe_WebAuto_Chorome.business.Login_Business import LoginBusiness
+from isMe_WebAuto.business.Login_Business import LoginBusiness
 from selenium import webdriver
 import time
 
