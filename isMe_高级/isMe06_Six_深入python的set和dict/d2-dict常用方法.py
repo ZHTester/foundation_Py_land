@@ -6,12 +6,14 @@ fromkeys 静态方法 转换成dict对象
 setdefault ----
 update -----
 
+
 """
 a = {
     "landing": {"commpany": "beij"},
     "landing2": {"commpany": "chongqing2"},
 
 }
+
 # ----浅拷贝---- 原始数据会正确的拷贝过来，但是了
 # new_dict = a.copy()
 # new_dict['landing']['commpany'] = 'chongqing3'
@@ -38,12 +40,12 @@ print("123", get_demo)
 
 # ---setdefault 也就是将没有的值添加到我们的dict中
 set_dict = new_dict.setdefault("mtiang", "成都大学")
-print("344",new_dict)  # 这样就是把没有的数据添加到我们dict中去了
-print("443",set_dict)
+print("344", new_dict)  # 这样就是把没有的数据添加到我们dict中去了
+print("443", set_dict)
 
 # ---update 也就是将两个dict合并  这里面写入tuple也是可以的  ~ 或者说是可迭代对象
 new_dict.update({"dingtai": "测试"})
-print("889",new_dict)
+print("889", new_dict)
 
 # 元组拆包的方法
 for key, value in new_dict.items():
