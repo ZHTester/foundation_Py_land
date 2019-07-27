@@ -20,7 +20,8 @@ GIL全称Global Interpreter Lock
   无法将多个线程映射到多个cpu上，这样就无法体现多核的优势了。但是了我们还是有很多编译器是去掉了GIL的
   (--- 但是我们使用java的话是可以使得多个线程映射到多个cpu上面的 ---)，不如说python编译器.比如说我们遇到的pypy编译器
   
-6 线程间的同步这个也是需要好好考虑的。
+6 线程间的同步这个也是需要好好考虑的
+8 GIL会根据字节码的行数以及时间片释放GIL 还有一种就是遇到IO操作的时候也是会释放的
 7 GIL也就是不是整个过程的占用，GIL会根据字节码的行数以及是时间片释放GIL，
   来进行一个释放的操作，所以可以通过时间片来进行一个计算的，还有一种释放的情况就是遇到了GIL的IO操作
 8  会有一个专门ticks进行计数 一旦ticks数值达到100 这个时候释放Gil锁 线程之间开始竞争Gil锁(说明:
@@ -28,51 +29,52 @@ GIL全称Global Interpreter Lock
 -----
  
 """
-import dis
+# import dis
+#
+#
+# # dis 也就是字节码的函数
+# def add1(a):
+#     a = a + 1
+#     return a
+#
+#
+# print(dis.dis(add1))  # 反编译a 这样的整个过程就是函数变成字节码的一个过程
+
+import threading
+
+total = 0
 
 
-# dis 也就是字节码的函数
-def add1(a):
-    a = a + 1
-    return a
+def add():
+    # 遇到IO操作就会释放相关的操作 也就是会将全局锁给释放了
+    # 1 do something1
+    # 2 io 操作
+    # 1 do something3
+
+    global total
+    for i in range(10000000):
+        total += 1
 
 
-print(dis.dis(add1))  # 反编译a 这样的整个过程就是函数变成字节码的一个过程
+def desc():
+    global total
+    for i in range(10000000):
+        total -= 1
 
-# import threading
-#
-# total = 0
-#
-#
-# def add():
-#     # 1 do something1
-#     # 2 io 操作
-#     # 1 do something3
-#
-#     global total
-#     for i in range(10000000):
-#         total += 1
-#
-#
-# def desc():
-#     global total
-#     for i in range(10000000):
-#         total -= 1
-#
-#
-# thread1 = threading.Thread(target=add)
-# thread2 = threading.Thread(target=desc)
-#
-# # 启动线程也是有先后顺序的
-# thread1.start()
-# thread2.start()
-#
-# # 线程同时执行 join
-# thread1.join()
-# thread2.join()
-#
-#
-# print(total)  # 这样的gil资源就是会释放的
+
+thread1 = threading.Thread(target=add)
+thread2 = threading.Thread(target=desc)
+
+# 启动线程也是有先后顺序的
+thread1.start()
+thread2.start()
+
+# 线程同时执行 join
+thread1.join()
+thread2.join()
+
+
+print(total)  # 这样的gil资源就是会释放的
 
 
 
