@@ -59,7 +59,7 @@ urls = [4, 3, 2, 5, 6, 7]  # 这里也就是sleep 请求多少秒
 all_task = [excutor.submit(get_html, url) for url in urls]
 for future in as_completed(all_task):  # 这样就能完成这样的一个获取然后返回正确的task
     data = future.result()
-    print("get {} page ".format(data)) # excutor.map() 这样的方法就是比这样的方式更加的简单
+    print("get {} page ".format(data))  # excutor.map() 这样的方法就是比这样的方式更加的简单
 
 # # 通过excutor获取已经完成的task 这里就是根据Url的顺序进行执行的
 # for data in excutor.map(get_html, urls):

@@ -22,6 +22,7 @@ __all__ = ["Awaitable", "Coroutine",
 
 5 MutableSequence 可变的序列，其中与Sequence的区别就是多了setitem 与 delitem 可以添加值与删除值，这样就是构成了我们的
   可变序列的基本因素。
+
      @abstractmethod
     def __setitem__(self, index, value):
         raise IndexError

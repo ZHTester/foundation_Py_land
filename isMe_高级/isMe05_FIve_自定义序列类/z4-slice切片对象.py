@@ -24,7 +24,7 @@ class Group:
 
     """
     实现序列化中的抽象方法 不变的序列化对象 Sequence
-    
+    实现Sequence 不可变的中的魔法函数
     """
 
     def __reversed__(self):
@@ -39,7 +39,7 @@ class Group:
         切片的操作交个list来进行操作
         item 初始化一个切片对象也就是slice 交给我们的getitem来使用
         list为什么能这么用，因为list也实现了这样的一个方法，我们自定义一个序列类型，
-        我们就需要实现这一的一个方法，
+        我们就需要实现这一的一个方法， 其实也就是可以实现了切片的额操作
         :param item:
         :return:
         """
@@ -74,6 +74,7 @@ staffss = ['landing1', 'landing2', 'landing3', 'landing4']
 group = Group(company_name="北京网", group_name="users", staffs=staffss)
 reversed(group)
 submit = group[:2]  # 切片后还是group 而不是list 这样的group就是一个切片对象 这里其实还是一个group对象
+print(group)
 
 # 这里也就调用了魔法函数
 # group[0]  # 这个时候的对象就是一个int类型对象了  这个时候就实现了一个切片类型了

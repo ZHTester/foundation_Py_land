@@ -17,8 +17,6 @@ type object class 关系  - 理解python一切皆对象的关系
    python中所说的一切皆对象 一切都继承了object
 13 我们需要深入的去理解一下python中一切皆对象是如何去做到的
 
-
-
 """
 a = 1
 b = 'abc'

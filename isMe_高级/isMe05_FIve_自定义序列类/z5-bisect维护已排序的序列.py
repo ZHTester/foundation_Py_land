@@ -1,5 +1,5 @@
 """
-说明: bisect 其实就是用来处理已排序的序列的查找模块叫做bisect，
+说明: bisect 其实就是用来处理已排序的序列的查找模块叫做bisect，维护一个可排序的序列。
      其中list只是序列中的一种，用来维持已排序的序列，且这个序列是升序，
      但是bisect可以为之可修改的序列(可变序列)
 
@@ -32,8 +32,10 @@ bisect.insort(insert_list, 4)
 bisect.insort(insert_list, 2)
 bisect.insort(insert_list, 5)
 bisect.insort(insert_list, 1)
+bisect.insort(insert_list, 33)
 
-print(bisect.bisect(insert_list, 33))  # 在bisect_right后进行插入 也就是第5个位置 也就是找到相同元素之后的右边
-print(bisect.bisect(insert_list, 3))  # 在找到重复位置后在进行一个插入工作 第3个位置
+print(insert_list)
+print(bisect.bisect_left(insert_list, 33))  # 在bisect_right后进行插入 也就是第5个位置 也就是找到相同元素之后的右边
+print(bisect.bisect_right(insert_list, 3))  # 在找到重复位置后在进行一个插入工作 第3个位置
 print(bisect.bisect_left(insert_list, 3))  # 在找到重复位置后在进行一个插入工作 第3个位置
 print(insert_list)  # [1, 2, 3, 4, 5] 这里打印出来是一个完整的排序序列
