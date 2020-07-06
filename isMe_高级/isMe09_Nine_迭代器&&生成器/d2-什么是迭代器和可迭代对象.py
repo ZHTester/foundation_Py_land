@@ -30,6 +30,7 @@ class Company(object):
     4 这里就直接返回 return MyIterator(self.employee) 这样的一个迭代器
     """
     def __iter__(self):
+        # 单独实现的迭代器对象
         return MyIterator(self.employee)
 
     """
@@ -46,6 +47,9 @@ class Company(object):
 
 
 # 用迭代器外部的迭代器对象, 来维护外部的迭代对象。
+# 自定义迭代器 迭代器的前提实现了迭代协议
+# 继承了 Iterator 也就是实现了迭代协议
+
 class MyIterator(Iterator):
     """
     真正返回迭代逻辑的就是在next这个魔法函数种
@@ -55,10 +59,13 @@ class MyIterator(Iterator):
         self.index = 0
 
     """
-    next只能一步一步的传递值进来，并且不能传递索引值进来的
-    所以这个时候，我们就需要维护内部的常规变量了 self.index
+    1 next只能一步一步的传递值进来，并且不能传递索引值进来的
+    2 所以这个时候，我们就需要维护内部的常规变量了 self.index
+    3 迭代器是不支持切片的 迭代的时候在需要的时候才会产生数据
+    4 
     """
     def __next__(self):
+        # 真正返回迭代值是在next魔法函数中，这样才是实现了一个可迭代的对象，也就是迭代器
         try:
             word = self.iter_list[self.index]
         except IndexError:

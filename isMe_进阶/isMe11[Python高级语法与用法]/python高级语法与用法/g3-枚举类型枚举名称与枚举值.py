@@ -36,8 +36,6 @@ class common:
 1 枚举的名称和枚举的本身并不是一个东西
 枚举类型  枚举的名字  枚举的值的什么区别了  这个就需要百度一下了
 
-
-
 """
 print(VIP.GREEN.value)  # 访问标签属性下面的值  枚举值
 print(VIP.YELLOW.name)  # 访问标签的属性名称 这个得到的是一个str类型 枚举名称

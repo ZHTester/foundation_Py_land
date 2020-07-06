@@ -1,6 +1,7 @@
 # coding=utf-8
 __author__ = 'landing'
 __data__ = '2018/12/27  13:40'
+
 """
 python中是如何实现生成器的 ..... 也就是yield的原理
 1: python中的函数的工作流程 
@@ -16,6 +17,7 @@ python中是如何实现生成器的 ..... 也就是yield的原理
    
 -------------------具体可以查看该博客进行学习生成器实现的原理--------------
 https://www.cnblogs.com/traditional/p/9221680.html
+
 
 --------     
    
@@ -52,6 +54,7 @@ def gen_func():
 gen = gen_func()
 print(dis.dis(gen))
 
+# 生成器对象中会生成对象 对象中会产生两个方法记录最后一次调用和最近一次的调用
 # 前面的图也解释了，gi_frame的f_lasti(这个也就是控制了函数的暂停)会记录最近的一次执行状态，
 # gi_locals(这个也就是控制了函数的继续操作)会记录当前的局部变量 这也就是协程中实现暂停与继续实现下去的基础。
 print(gen.gi_frame.f_lasti)
@@ -60,6 +63,7 @@ print(gen.gi_frame.f_locals)
 # print(dis.dis(foo))
 # foo()
 # print(frame.f_code.co_name)  # 这里就是看栈, 帧 里面到底有什么对象东西 这样就是指向了bar的栈, 帧 对象中
-#
+
 # caller_frame = frame.f_back
 # print(caller_frame.f_code.co_name)
+

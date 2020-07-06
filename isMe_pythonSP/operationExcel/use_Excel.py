@@ -89,44 +89,23 @@ class ExcelUtil:
         xueli = []
         city = []
         salary = []
-
-        cc = 0
-        bb = 0
-        dd = 0
-        ee = 0
-        ff = 0
-
         conn = self.get_conn()
         cursor = conn.cursor()  # 加入游标
         sql1 = """select degree_need,job_city,salary from lagou_job"""
         cursor.execute(sql1)
-        # print(cursor.execute(sql1))
+        print(cursor.execute(sql1))
         results = cursor.fetchall()
         for (i, value) in enumerate(results):
-            value = list(value)
-            for va in value:
-                if '北京' in va:
-                    xueli.append(value[0])
-                    bb += 1
-                    if '本科及以上' in value[0]:
-                        cc += 1
-                    elif '硕士及以上' in value[0]:
-                        ee = 1
-                    elif '学历不限' in value[0]:
-                        ff += 1
-                    elif '专科及以上' in value[0]:
-                        dd += 1
-        print("在北京的职位一共为{0}个职位".format(bb))
-        print("本科职位为{0}个职位".format(cc))
-        print("硕士职位为{0}个职位".format(ee))
-        print("学历不限职位为{0}个职位".format(ff))
+            if '' in value:
+                pass
+            else:
+                xueli.append(value[0])  # 学历
+                city.append(value[1])  # 城市
+                salary.append(value[2])  # 薪资
 
-        #     xueli.append(value[0])
-        #     city.append(value[1])
-        #     salary.append(value[2])
-        # print(list(set(xueli)))
-        # print(list(set(city)))
-        # print(sorted(list(set(salary))))
+        print(list(set(xueli)))
+        print(list(set(city)))
+        print(list(set(salary)))
 
 
 

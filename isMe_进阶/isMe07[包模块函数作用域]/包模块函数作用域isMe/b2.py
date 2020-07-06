@@ -20,6 +20,6 @@
 
 
 print("name:" + __name__)  #
-print("package:" + __package__)
+print("package:" + str(__package__))
 print("doc:" + __doc__)  # 展示的是模块的注释
 print("file:" + __file__)  # 指定文件的物理路径
